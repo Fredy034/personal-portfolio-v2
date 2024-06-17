@@ -22,10 +22,26 @@
 .timeline-item:not(:last-child) {
   margin-bottom: 20px;
 }
+.timeline-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 7px;
+}
 .timeline-item-title {
   font-size: var(--fs-6);
   line-height: 1.3;
-  margin-bottom: 7px;
+}
+.timeline-title > .dot {
+  width: 5px;
+  height: 5px;
+  background: var(--light-gray-70);
+  border-radius: 50%;
+}
+.timeline-title > .timeline-item-subtitle {
+  color: var(--light-gray-70);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-300);
 }
 .timeline-year {
   display: flex;
@@ -83,7 +99,7 @@
 .skill .title-wrapper {
   display: flex;
   align-items: center;
-  gap: 5px;
+  justify-content: space-between;
   margin-bottom: 8px;
 }
 .skill .title-wrapper span {

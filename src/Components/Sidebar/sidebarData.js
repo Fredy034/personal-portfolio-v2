@@ -31,11 +31,11 @@ const ContactData = [
 ];
 
 const SocialData = [
-  {
-    id: 1,
-    icon: 'fa-brands fa-instagram',
-    link: 'https://www.instagram.com/fredy_0816/',
-  },
+  // {
+  //   id: 1,
+  //   icon: 'fa-brands fa-instagram',
+  //   link: 'https://www.instagram.com/fredy_0816/',
+  // },
   {
     id: 2,
     icon: 'fa-brands fa-linkedin',

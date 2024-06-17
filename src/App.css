@@ -1,4 +1,5 @@
 .sidebar,
+.options,
 article {
   background: var(--eerie-black-2);
   border: 1px solid var(--jet);
@@ -127,17 +128,10 @@ main {
   min-width: 259px;
 }
 
-/* responsive larger than 450px screen */
-@media (min-width: 450px) {
-  .project-img,
-  .blog-banner-box {
-    height: auto;
-  }
-}
-
 /* responsive larger than 580px screen */
 @media (min-width: 580px) {
   .sidebar,
+  .options,
   article {
     width: 520px;
     margin-inline: auto;
@@ -161,98 +155,24 @@ main {
     margin-top: 60px;
     margin-bottom: 100px;
   }
-
-  /* #PORTFOLIO, BLOG */
-  .project-img,
-  .blog-banner-box {
-    border-radius: 16px;
-  }
-  .blog-posts-list {
-    gap: 30px;
-  }
-  .blog-content {
-    padding: 25px;
-  }
-
-  /* #CONTACT */
-  .mapbox {
-    height: 380px;
-    border-radius: 18px;
-  }
-  .input-wrapper {
-    gap: 30px;
-    margin-bottom: 30px;
-  }
-  .form-input {
-    padding: 15px 20px;
-  }
-  textarea.form-input {
-    margin-bottom: 30px;
-  }
-  .form-btn {
-    --fs-6: 16px;
-    padding: 16px 20px;
-  }
-  .form-btn ion-icon {
-    font-size: 18px;
-  }
 }
 
 /* responsive larger than 768px screen */
 @media (min-width: 768px) {
   .sidebar,
+  .options,
   article {
     width: 700px;
   }
   .has-scrollbar::-webkit-scrollbar-button {
     width: 100px;
   }
-
-  /* #PORTFOLIO */
-  .article-title {
-    padding-bottom: 20px;
-  }
-  .filter-select-box {
-    display: none;
-  }
-  .filter-list {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 25px;
-    padding-left: 5px;
-    margin-bottom: 30px;
-  }
-  .filter-item button {
-    color: var(--light-gray);
-    font-size: var(--fs-5);
-    transition: var(--transition-1);
-  }
-  .filter-item button:hover {
-    color: var(--light-gray-70);
-  }
-  .filter-item button.active {
-    color: var(--orange-yellow-crayola);
-  }
-  /* portfolio and blog grid */
-  .project-list,
-  .blog-posts-list {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  /* #CONTACT */
-  .input-wrapper {
-    grid-template-columns: 1fr 1fr;
-  }
-  .form-btn {
-    width: max-content;
-    margin-left: auto;
-  }
 }
 
 /* responsive larger than 1024px screen */
 @media (min-width: 1024px) {
   .sidebar,
+  .options,
   article {
     width: 950px;
     box-shadow: var(--shadow-5);
@@ -267,40 +187,12 @@ main {
     width: max-content;
     margin: auto;
   }
-
-  /* #PORTFOLIO */
-  .project-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  /* #BLOG */
-  .blog-banner-box {
-    height: 230px;
-  }
 }
 
 /* responsive larger than 1250px screen */
 @media (min-width: 1250px) {
-  body::-webkit-scrollbar {
-    width: 20px;
-  }
-  body::-webkit-scrollbar-track {
-    background: var(--smoky-black);
-  }
-  body::-webkit-scrollbar-thumb {
-    border: 5px solid var(--smoky-black);
-    background: hsla(0, 0%, 100%, 0.1);
-    border-radius: 20px;
-    box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11), inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
-  }
-  body::-webkit-scrollbar-thumb:hover {
-    background: hsla(0, 0%, 100%, 0.15);
-  }
-  body::-webkit-scrollbar-button {
-    height: 60px;
-  }
-
   .sidebar,
+  .options,
   article {
     width: auto;
   }
@@ -315,6 +207,12 @@ main {
     justify-content: center;
     align-items: stretch;
     gap: 25px;
+  }
+  .aside-container {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 25px;
+    justify-content: flex-end;
   }
   .main-content {
     min-width: 75%;

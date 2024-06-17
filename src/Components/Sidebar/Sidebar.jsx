@@ -9,6 +9,8 @@ const Sidebar = () => {
     setIsActive(!isActive);
   };
 
+  const isAviable = true;
+
   return (
     <aside className={`sidebar${isActive ? ' active' : ''}`}>
       <div className="sidebar-info">
@@ -18,6 +20,10 @@ const Sidebar = () => {
         <div className="info-content">
           <h1 className="name" title='Fredy Quintero'>Fredy Quintero</h1>
           <p className="title">Full Stack Developer</p>
+          <div className="availability-container">
+            <span className={`availability-status ${isAviable ? '' : 'offline'}`}></span>
+            <span className="availability-title">{isAviable ? 'Available to Work' : 'Currently busy'}</span>
+          </div>
         </div>
         <button className="info_more-btn" onClick={handleToggle}>
           <span>Show Contacts</span>

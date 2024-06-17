@@ -1,0 +1,77 @@
+.options {
+  margin: 15px auto;
+  max-height: 112px;
+  overflow: hidden;
+  transition: var(--transition-2);
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+.options .icon-box {
+  width: 45px;
+  height: 45px;
+}
+.theme-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline-start: auto;
+  margin: 10px 0;
+  transition: var(--transition-1);
+}
+.options .icon-box i {
+  font-size: 20px;
+}
+.option .icon-box i.active {
+  display: block;
+}
+.options .icon-box i:not(.active) {
+  display: none;
+}
+.options .filter-select-box {
+  width: 100%;
+  margin: 0;
+}
+
+/* responsive larger than 580px screen */
+@media (min-width: 580px) {
+  .options {
+    max-height: 180px;
+    margin: 30px auto;
+  }
+}
+
+/* responsive larger than 768px screen */
+@media (min-width: 768px) {
+  .options {
+    gap: 70px;
+  }
+  .options .filter-list {
+    display: none;
+  }
+  .options .filter-select-box {
+    display: block;
+  }
+}
+
+/* responsive larger than 1250px screen */
+@media (min-width: 1250px) {
+  .options {
+    width: 100%;
+    max-height: 90px;
+    padding: 0 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+  }
+  .options .filter-list {
+    margin: 0;
+    display: flex;
+  }
+  .options .filter-select-box {
+    display: none;
+  }
+}
