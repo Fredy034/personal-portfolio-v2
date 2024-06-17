@@ -1,8 +1,53 @@
-import './Portfolio.css'
+import { useState } from 'react';
 import { usePageContext } from '../PageContext';
+import './Portfolio.css';
+import ProjectsData from './portfolioData';
 
 const Portfolio = () => {
   const { activePage } = usePageContext();
+
+  const [selectedValue, setSelectedValue] = useState('all');
+  const [lastCliked, setLastClicked] = useState(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const Categories = ['All', 'Web Development', 'Mobile Development', 'Desktop Development'];
+  // const Categories = useMemo(() => {
+  //   const categories = new Set(['All']);
+  //   ProjectsData.forEach(project => {
+  //     project.category.forEach(cat => {
+  //       categories.add(cat);
+  //     });
+  //   });
+  //   return Array.from(categories);
+  // }, []);
+
+  const handleSelect = (value) => {
+    setSelectedValue(value);
+    filterFunc(value);
+  }
+
+  const filterFunc = (selectedValue) => {
+    return ProjectsData.map(project => {
+      if (selectedValue === 'all' || project.category.map(c => c.toLowerCase()).includes(selectedValue)) {
+        return { ...project, active: true }
+      } else {
+        return { ...project, active: false }
+      }
+    })
+  }
+
+  const handleFilterBtn = (event, value) => {
+    setSelectedValue(value);
+
+    if (lastCliked) {
+      lastCliked.classList.remove('active');
+    }
+
+    event.currentTarget.classList.add('active');
+    setLastClicked(event.currentTarget);
+  }
+
+  const filteredProjects = filterFunc(selectedValue);
 
   return (
     <article className={`portfolio ${activePage === 'portfolio' ? 'active' : ''}`}>
@@ -22,58 +67,88 @@ const Portfolio = () => {
       <div className="separator"></div>
       <section className="projects">
         <ul className="filter-list">
-          <li className="filter-item">
-            <button className="active">All</button>
-          </li>
-          <li className="filter-item">
-            <button>Web Design</button>
-          </li>
-          <li className="filter-item">
-            <button>Web Development</button>
-          </li>
-          <li className="filter-item">
-            <button>Mobile App</button>
-          </li>
+          {Categories.map((category, index) => (
+            <li key={index} className="filter-item">
+              <button
+                className={`filter-btn ${selectedValue === category.toLowerCase() ? 'active' : ''}`}
+                onClick={(event) => handleFilterBtn(event, category.toLowerCase())}
+              >
+                {category}
+              </button>
+            </li>
+          ))}
         </ul>
         <div className="filter-select-box">
-          <button className="filter-select">
-            <div className="select-value">Select Category</div>
+          <button className={`filter-select ${isDropdownOpen ? 'active' : ''}`} onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+            <div className="select-value">{selectedValue.charAt(0).toUpperCase() + selectedValue.slice(1)}</div>
             <div className="select-icon">
               <i className="fa-solid fa-chevron-down"></i>
             </div>
           </button>
-          <ul className="select-list">
-            <li className="select-item">
-              <button>All</button>
-            </li>
-            <li className="select-item">
-              <button>Web Design</button>
-            </li>
-            <li className="select-item">
-              <button>Web Development</button>
-            </li>
-            <li className="select-item">
-              <button>Mobile App</button>
-            </li>
+          <ul className="select-list" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+            {Categories.map((category, index) => (
+              <li key={index} className="select-item">
+                <button
+                  className={`select-btn ${selectedValue === category.toLowerCase() ? 'active' : ''}`}
+                  onClick={() => handleSelect(category.toLowerCase())}
+                >
+                  {category}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
         <ul className="project-list">
-          <li className="project-item active">
-            <a href="#">
-              <figure className="project-img">
-                <div className="project-item-icon-box">
-                  <i className="fa-regular fa-eye"></i>
+          {filteredProjects.map((project, index) => (
+            <li key={index} className={`project-item ${project.active ? 'active' : ''}`}>
+              <a href={project.demo} target='_blank'>
+                <figure className="project-img">
+                  <div className="project-item-icon-container">
+                    {project.demo !== '' ? (
+                      <a href={project.demo} target='_blank' title='View Demo'>
+                        <div className="project-item-icon-box">
+                          <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                      </a>
+                    ) : null}
+                    {project.github !== '' ? (
+                      <a href={project.github} target='_blank' title='View Code'>
+                        <div className="project-item-icon-box" >
+                          <i className="fa-brands fa-github"></i>
+                        </div>
+                      </a>
+                    ) : null}
+                    {project.figma !== '' ? (
+                      <a href={project.github} target='_blank' title='View Figma'>
+                        <div className="project-item-icon-box" >
+                          <i className="fa-brands fa-figma"></i>
+                        </div>
+                      </a>
+                    ) : null}
+                  </div>
+                  <img src={project.image} alt={project.title} loading='lazy' />
+                </figure>
+                <div className="project-header">
+                  <h3 className="project-title">{project.title}</h3>
+                  <div className="dot"></div>
+                  <h5 className="project-date">Developed in {project.date}</h5>
                 </div>
-                <img src="/images/project-1.jpg" alt="Finance" loading='lazy' />
-              </figure>
-              <h3 className="project-title">Finance</h3>
-              <p className="project-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, sit dolor doloremque magnam quo excepturi perspiciatis nisi eum incidunt omnis explicabo deleniti. Expedita sequi unde corrupti doloribus libero quasi consequatur.</p>
-              <div className="project-category-container">
-                <p className="project-category">Web Development</p>
-              </div>
-            </a>
-          </li>
+                <p className="project-description">{project.description}</p>
+                <div className="project-category-container">
+                  {project.category.map((category, index) => (
+                    <p key={index} className="project-category">{category}</p>
+                  ))}
+                </div>
+              </a>
+            </li>
+          ))}
         </ul>
+      </section>
+      <section className="archive-projects">
+        <a href="#" className="archive-btn">
+          <span className="archive-text">View full project archive</span>
+          <i className="fa-solid fa-arrow-right"></i>
+        </a>
       </section>
     </article>
   )

@@ -20,7 +20,8 @@
   transition: var(--transition-1);
 }
 .options .icon-box i {
-  font-size: 20px;
+  font-size: 22px;
+  transition: var(--transition-1);
 }
 .option .icon-box i.active {
   display: block;
@@ -28,9 +29,25 @@
 .options .icon-box i:not(.active) {
   display: none;
 }
+.options .icon-box::before {
+  transition: var(--transition-1);
+}
+.theme-switch:hover,
+.options .icon-box:hover::before {
+  background: var(--text-gradient-yellow);
+}
+.theme-switch:hover i {
+  color: var(--jet);
+}
 .options .filter-select-box {
-  width: 100%;
+  width: 50%;
   margin: 0;
+  position: absolute;
+  z-index: 1000;
+  right: 30px;
+}
+.options .select-item {
+  cursor: pointer;
 }
 
 /* responsive larger than 580px screen */
@@ -38,6 +55,7 @@
   .options {
     max-height: 180px;
     margin: 30px auto;
+    justify-content: space-between;
   }
 }
 
@@ -47,10 +65,7 @@
     gap: 70px;
   }
   .options .filter-list {
-    display: none;
-  }
-  .options .filter-select-box {
-    display: block;
+    margin: 0;
   }
 }
 
@@ -66,12 +81,5 @@
     justify-content: space-between;
     align-items: center;
     z-index: 1;
-  }
-  .options .filter-list {
-    margin: 0;
-    display: flex;
-  }
-  .options .filter-select-box {
-    display: none;
   }
 }

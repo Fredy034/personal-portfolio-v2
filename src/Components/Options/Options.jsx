@@ -1,39 +1,66 @@
-import './Options.css'
+import { useState } from 'react';
+import './Options.css';
 
 const Options = () => {
-  const theme = localStorage.getItem('theme');
-  const themeDefault = theme === 'dark' ? 'dark' : 'light';
+  const [selectedValue, setSelectedValue] = useState('english');
+  const [lastCliked, setLastClicked] = useState(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const lang = 'en'
+  const Languages = ['English', 'Spanish'];
+
+  const handleSelect = (value) => {
+    setSelectedValue(value);
+  }
+
+  const handleFilterBtn = (event, value) => {
+    setSelectedValue(value);
+
+    if (lastCliked) {
+      lastCliked.classList.remove('active');
+    }
+
+    event.currentTarget.classList.add('active');
+    setLastClicked(event.currentTarget);
+  }
+
+  const [theme, setTheme] = useState('dark');
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => (prevTheme === 'dark' ? 'light' : 'dark'));
+  };
+
+  const icon = theme === 'dark' ? <i className="fa-regular fa-moon active"></i> : <i className="fa-regular fa-sun active"></i>;
 
   return (
     <aside className="options">
-      <button className="icon-box theme-switch">
-        <i className={`fa-regular fa-moon ${themeDefault === 'dark' ? 'active' : ''}`}></i>
-        <i className={`fa-regular fa-sun ${themeDefault === 'light' ? 'active' : ''}`}></i>
+      <button className="icon-box theme-switch" onClick={toggleTheme}>
+        {icon}
       </button>
       <ul className="filter-list">
-          <li className="filter-item">
-            <button className={`${lang === 'en' ? 'active' : ''}`}>English</button>
+        {Languages.map((language, index) => (
+          <li key={index} className="filter-item">
+            <button className={`filter-btn ${selectedValue === language.toLowerCase() ? 'active' : ''}`} onClick={(event) => handleFilterBtn(event, language.toLowerCase())} >
+              {language}
+            </button>
           </li>
-          <li className="filter-item">
-            <button className={`${lang === 'es' ? 'active' : ''}`}>Spanish</button>
-          </li>
+        
+        ))}
         </ul>
       <div className="filter-select-box">
-          <button className="filter-select">
-            <div className="select-value">Select your Language</div>
+          <button className={`filter-select ${isDropdownOpen ? 'active' : ''}`} onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+            <div className="select-value">{selectedValue.charAt(0).toUpperCase() + selectedValue.slice(1)}</div>
             <div className="select-icon">
               <i className="fa-solid fa-chevron-down"></i>
             </div>
           </button>
-          <ul className="select-list">
-            <li className="select-item">
-              <button>English</button>
-            </li>
-            <li className="select-item">
-              <button>Spanish</button>
-            </li>
+          <ul className="select-list" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+            {Languages.map((language, index) => (
+              <li key={index} className="select-item">
+                <button className={`select-btn ${selectedValue === language.toLowerCase() ? 'active' : ''}`} onClick={() => handleSelect(language.toLowerCase())} >
+                  {language}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
     </aside>

@@ -1,8 +1,33 @@
-import './Contact.css'
+import { useEffect, useState } from 'react';
 import { usePageContext } from '../PageContext';
+import './Contact.css';
 
 const Contact = () => {
   const { activePage } = usePageContext();
+
+  const [formData, setFormData] = useState({
+    fullname: '',
+    email: '',
+    message: ''
+  })
+  const [isFormValid, setIsFormValid] = useState(false)
+
+  useEffect (() => {
+    const form = document.querySelector('.form')
+    setIsFormValid(form.checkValidity())
+  }, [formData])
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target
+    setFormData({
+      ...formData,
+      [name]: value
+    })
+  }
+
+  useEffect (() => {
+    console.log(formData)
+  }, [formData])
 
   return (
     <article className={`contact ${activePage === 'contact' ? 'active' : ''}`}>
@@ -18,11 +43,11 @@ const Contact = () => {
         <h3 className="h3 form-title">Contact Form</h3>
         <form action="#" className="form">
           <div className="input-wrapper">
-            <input type="text" name="fullname" placeholder='Full name' className="form-input" required />
-            <input type="email" name="email" placeholder='Email address' className="form-input" required />
+            <input type="text" name="fullname" placeholder='Full name' className="form-input" value={formData.fullname} onChange={handleInputChange} required />
+            <input type="email" name="email" placeholder='Email address' className="form-input" value={formData.email} onChange={handleInputChange} required />
           </div>
-          <textarea name="message" className="form-input" placeholder='Your Message' required></textarea>
-          <button className="form-btn" type='submit' disabled>
+          <textarea name="message" className="form-input" placeholder='Your Message' value={formData.message} onChange={handleInputChange} required></textarea>
+          <button className="form-btn" type='submit' disabled={!isFormValid}>
             <i className="fa-regular fa-paper-plane"></i>
             <span>Send Message</span>
           </button>

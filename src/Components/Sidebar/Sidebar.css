@@ -52,7 +52,7 @@
   height: 8px;
   border-radius: 8px;
   background: rgb(163 230 53);
-  animation: twinkle 0.75s ease-in-out forwards infinite;
+  animation: twinkle 1s ease-in-out forwards infinite;
 }
 @keyframes twinkle {
   0% {

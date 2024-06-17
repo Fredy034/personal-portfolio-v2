@@ -5,7 +5,7 @@ const Navbar = () => {
   const { activePage, setActivePage } = usePageContext();
 
   // const Pages = ['About', 'Curriculum', 'Portfolio', 'Blog', 'Contact'];
-  const Pages = ['About', 'Curriculum', 'Portfolio', 'Contact'];
+  const Pages = ['About', 'Curriculum', 'Portfolio'];
 
   const handleNavLinkClick = (page) => {
     setActivePage(page);

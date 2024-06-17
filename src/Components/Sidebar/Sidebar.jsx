@@ -9,6 +9,9 @@ const Sidebar = () => {
     setIsActive(!isActive);
   };
 
+  const iconContacts = isActive ? 'fa-solid fa-chevron-up' : 'fa-solid fa-chevron-down';
+  const textContacts = isActive ? 'Hide Contacts' : 'Show Contacts';
+
   const isAviable = true;
 
   return (
@@ -26,8 +29,8 @@ const Sidebar = () => {
           </div>
         </div>
         <button className="info_more-btn" onClick={handleToggle}>
-          <span>Show Contacts</span>
-          <i className="fa-solid fa-chevron-down"></i>
+          <span>{textContacts}</span>
+          <i className={iconContacts}></i>
         </button>
       </div>
       <div className="sidebar_info-more">

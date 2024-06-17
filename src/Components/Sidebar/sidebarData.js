@@ -6,13 +6,13 @@ const ContactData = [
     link: 'mailto:fredy034@hotmail.com',
     linkText: 'fredy034@hotmail.com',
   },
-  {
-    id: 2,
-    icon: 'fa-solid fa-mobile-screen',
-    title: 'Phone',
-    link: 'tel:+573014588146',
-    linkText: '+57 301 458 8146',
-  },
+  // {
+  //   id: 2,
+  //   icon: 'fa-solid fa-mobile-screen',
+  //   title: 'Phone',
+  //   link: 'tel:+573014588146',
+  //   linkText: '+57 301 458 8146',
+  // },
   {
     id: 3,
     icon: 'fa-regular fa-calendar',
