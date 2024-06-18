@@ -118,6 +118,10 @@
   height: 100%;
   border-radius: inherit;
 }
+.full-resume {
+  margin-top: 20px;
+  padding: 0;
+}
 
 /* responsive larger than 580px screen */
 @media (min-width: 580px) {

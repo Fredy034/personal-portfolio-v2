@@ -64,20 +64,20 @@ const About = () => {
         </ul>
       </section> */}
       {/* -testimonials modal */}
-      <div className={`modal-container ${modalActive ? 'active' : ''}`} data-modal-container>
-        <div className={`overlay ${modalActive ? 'active' : ''}`} data-overlay onClick={toggleModal}></div>
+      <div className={`modal-container ${modalActive ? 'active' : ''}`}>
+        <div className={`overlay ${modalActive ? 'active' : ''}`} onClick={toggleModal}></div>
         <section className="testimonials-modal">
-          <button className="modal-close-btn" data-modal-close-btn onClick={toggleModal}>
+          <button className="modal-close-btn" onClick={toggleModal}>
             <i className="fa-solid fa-xmark"></i>
           </button>
           <div className="modal-img-wrapper">
             <figure className="modal-avatar-box">
-              <img src={modalContent.avatar} alt={`${modalContent.name} Avatar`} width={60} data-modal-img/>
+              <img src={modalContent.avatar} alt={`${modalContent.name} Avatar`} width={60} />
             </figure>
             <img src="/assets/icon-quote.svg" alt="Quote Icon" />
           </div>
           <div className="modal-content">
-            <h4 className="h3 modal-title" data-modal-title>{modalContent.name}</h4>
+            <h4 className="h3 modal-title">{modalContent.name}</h4>
             <time dateTime='2021-06-14'>14 June, 2021</time>
             <div className="modal-text">
               <p>{modalContent.text}</p>

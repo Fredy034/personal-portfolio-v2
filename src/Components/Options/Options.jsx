@@ -1,10 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Options.css';
 
 const Options = () => {
   const [selectedValue, setSelectedValue] = useState('english');
   const [lastCliked, setLastClicked] = useState(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [theme, setTheme] = useState('dark');
+
+  useEffect(() => {
+    document.body.setAttribute('data-theme', theme);
+  }, [theme]);
 
   const Languages = ['English', 'Spanish'];
 
@@ -22,8 +27,6 @@ const Options = () => {
     event.currentTarget.classList.add('active');
     setLastClicked(event.currentTarget);
   }
-
-  const [theme, setTheme] = useState('dark');
 
   const toggleTheme = () => {
     setTheme(prevTheme => (prevTheme === 'dark' ? 'light' : 'dark'));

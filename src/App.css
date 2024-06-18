@@ -6,6 +6,7 @@ article {
   border-radius: 20px;
   padding: 15px;
   box-shadow: var(--shadow-1);
+  transition: var(--transition-2);
   z-index: 1;
 }
 .separator {

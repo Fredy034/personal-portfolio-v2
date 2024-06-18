@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { usePageContext } from '../PageContext';
 import './Portfolio.css';
-import ProjectsData from './portfolioData';
+import { ArchiveData, ProjectsData } from './portfolioData';
 
 const Portfolio = () => {
   const { activePage } = usePageContext();
@@ -10,16 +10,13 @@ const Portfolio = () => {
   const [lastCliked, setLastClicked] = useState(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+  const [isArchiveActive, setIsArchiveActive] = useState(false);
+
+  const toggleArchive = () => {
+    setIsArchiveActive(!isArchiveActive);
+  };
+
   const Categories = ['All', 'Web Development', 'Mobile Development', 'Desktop Development'];
-  // const Categories = useMemo(() => {
-  //   const categories = new Set(['All']);
-  //   ProjectsData.forEach(project => {
-  //     project.category.forEach(cat => {
-  //       categories.add(cat);
-  //     });
-  //   });
-  //   return Array.from(categories);
-  // }, []);
 
   const handleSelect = (value) => {
     setSelectedValue(value);
@@ -145,11 +142,72 @@ const Portfolio = () => {
         </ul>
       </section>
       <section className="archive-projects">
-        <a href="#" className="archive-btn">
+        <div className="archive-btn" onClick={toggleArchive}>
           <span className="archive-text">View full project archive</span>
           <i className="fa-solid fa-arrow-right"></i>
-        </a>
+        </div>
       </section>
+      <div className={`modal-container ${isArchiveActive ? 'active' : ''}`}>
+        <div className={`overlay ${isArchiveActive ? 'active' : ''}`} onClick={toggleArchive}></div>
+        <section className="archive-modal">
+          <button className="modal-close-btn" onClick={toggleArchive}>
+            <i className="fa-solid fa-xmark"></i>
+          </button>
+          <header>
+            <h2 className="h2 article-title">All my projects</h2>
+          </header>
+          <div className="table-archive-container">
+            <table className="archive-container">
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Project</th>
+                  <th className='archive-hidden'>Made at</th>
+                  <th className='archive-hidden'>Built with</th>
+                  <th>Links</th>
+                </tr>
+              </thead>
+              <tbody>
+                {ArchiveData.map((project) => (
+                  <tr>
+                    <td>{project.date}</td>
+                    <td>
+                      <span className="name-project">{project.title}</span>
+                    </td>
+                    <td className='archive-hidden'>{project.made}</td>
+                    <td className='archive-hidden'>
+                      <ul>
+                        {project.category.map((category) => (
+                          <li className="technologies">{category}</li>
+                        ))}
+                      </ul>
+                    </td>
+                    <td>
+                      <div className="archive-link-container">
+                        {project.demo !== '' ? (
+                          <a href={project.demo} target='_blank'  className="archive-link" title='View Demo'>
+                            <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                          </a>
+                        ) : null}
+                        {project.github !== '' ? (
+                          <a href={project.github} target='_blank'  className="archive-link" title='View Code'>
+                            <i className="fa-brands fa-github"></i>
+                          </a>
+                        ) : null}
+                        {project.figma !== '' ? (
+                          <a href={project.github} target='_blank'  className="archive-link" title='View Figma'>
+                            <i className="fa-brands fa-figma"></i>
+                          </a>
+                        ) : null}
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
     </article>
   )
 }

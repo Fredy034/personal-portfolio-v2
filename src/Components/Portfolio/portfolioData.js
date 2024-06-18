@@ -82,4 +82,92 @@ const ProjectsData = [
   },
 ];
 
-export default ProjectsData;
+const ArchiveData = [
+  {
+    demo: 'https://fredy034.neocities.org/Consumir_API/index.html',
+    github: '',
+    figma: '',
+    title: 'Pokédex using PokeAPI',
+    date: '2023',
+    made: 'University Project',
+    description:
+      'Pokédex is a web application that allows users to search for their favorite Pokémon and view their stats, abilities, and more. The app uses the PokeAPI to fetch Pokémon data and display it in a user-friendly interface.',
+    category: ['Web Development', 'API', 'HTML', 'CSS', 'JavaScript'],
+    image: '',
+  },
+  {
+    demo: 'https://fredy034.neocities.org/Introduccion_JS/taller%2014/index.html',
+    github: '',
+    figma: '',
+    title: 'Solving JavaScript Challenges',
+    date: '2023',
+    made: 'University Activity',
+    description:
+      'A collection of JavaScript challenges that test your knowledge of the language. The challenges cover a wide range of topics, from basic syntax to advanced concepts, and are designed to help you improve your coding skills.',
+    category: ['Web Development', 'HTML', 'CSS', 'JavaScript', 'Class'],
+    image: '',
+  },
+  {
+    demo: 'https://fredy034.neocities.org/Introduccion_JS/taller%2014/index.html',
+    github: '',
+    figma: '',
+    title: 'Calculator using JavaScript',
+    date: '2023',
+    made: 'University Class',
+    description:
+      'A simple calculator web application built with HTML, CSS, and JavaScript. The calculator allows users to perform basic arithmetic operations, such as addition, subtraction, multiplication, and division, and provides a user-friendly interface for inputting numbers and operators.',
+    category: ['Web Development', 'HTML', 'CSS', 'JavaScript'],
+    image: '',
+  },
+  {
+    demo: 'https://fredy034.neocities.org/word_search/index.html',
+    github: '',
+    figma: '',
+    title: 'Word Search Game',
+    date: '2023',
+    made: 'University Challenge',
+    description:
+      'Word Search is a classic word puzzle game where you have to find and cross out all the words hidden in the grid of letters. The game features a variety of word categories and difficulty levels to challenge players of all ages.',
+    category: ['Web Development', 'HTML', 'CSS', 'JavaScript', 'Challenge'],
+    image: '',
+  },
+  {
+    demo: 'https://fredy034.neocities.org/Flash_Card/flip_card.html',
+    github: '',
+    figma: '',
+    title: 'Interactive Periodic Table',
+    date: '2023',
+    made: 'University Challenge',
+    description:
+      'An interactive periodic table web application that allows users to explore the elements and their properties. The app features a user-friendly interface with detailed information about each element, including its atomic number, symbol, name, and more.',
+    category: ['Web Development', 'HTML', 'CSS', 'Challenge', 'Flip Card'],
+    image: '',
+  },
+  {
+    demo: 'https://fredy034.neocities.org/Flash_Card/index.html',
+    github: '',
+    figma: '',
+    title: 'Flash Card of Idioms in English',
+    date: '2023',
+    made: 'University Challenge',
+    description:
+      'A flash card web application that helps users learn and memorize idioms in English. The app features a collection of common idioms with their meanings and examples, presented in a user-friendly interface for easy studying and practice.',
+    category: ['Web Development', 'HTML', 'CSS', 'Flash Card', 'Challenge'],
+    image: '',
+  },
+  {
+    demo: 'https://fredy034.neocities.org/Extreme_Activities/index.html',
+    github: '',
+    figma:
+      'https://www.figma.com/file/nYgTHpt9D8y5J9h7wrzwcs/WireFrame_DestinosTur%C3%ADsticos?type=design&node-id=0%3A1&mode=design&t=I3VvLpvfr83ffEBe-1',
+    title: 'Turistic Places Landing Page',
+    date: '2023',
+    made: 'University Challenge',
+    description:
+      'A flash card web application that helps users learn and memorize idioms in English. The app features a collection of common idioms with their meanings and examples, presented in a user-friendly interface for easy studying and practice.',
+    category: ['Web Development', 'HTML', 'CSS', 'Wireframe', 'Challenge'],
+    image: '',
+  },
+];
+
+export { ArchiveData, ProjectsData };

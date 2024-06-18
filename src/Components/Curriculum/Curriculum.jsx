@@ -74,6 +74,12 @@ const Curriculum = () => {
           ))}
         </ul>
       </section>
+      <section className="full-resume">
+        <a href='https://fredy034.neocities.org/curriculum/index.html' target='_blank' className="resume-btn">
+          <span className="resume-text">View Full Résumé</span>
+          <i className="fa-solid fa-arrow-right"></i>
+        </a>
+      </section>
     </article>
   )
 }
