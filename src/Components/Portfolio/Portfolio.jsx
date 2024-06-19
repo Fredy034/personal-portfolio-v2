@@ -98,7 +98,7 @@ const Portfolio = () => {
         <ul className="project-list">
           {filteredProjects.map((project, index) => (
             <li key={index} className={`project-item ${project.active ? 'active' : ''}`}>
-              <a href={project.demo} target='_blank'>
+              <div className='project-item-container' onClick={() => window.open(project.demo)} target='_blank'>
                 <figure className="project-img">
                   <div className="project-item-icon-container">
                     {project.demo !== '' ? (
@@ -136,7 +136,7 @@ const Portfolio = () => {
                     <p key={index} className="project-category">{category}</p>
                   ))}
                 </div>
-              </a>
+              </div>
             </li>
           ))}
         </ul>
@@ -168,8 +168,8 @@ const Portfolio = () => {
                 </tr>
               </thead>
               <tbody>
-                {ArchiveData.map((project) => (
-                  <tr>
+                {ArchiveData.map((project, index) => (
+                  <tr key={index}>
                     <td>{project.date}</td>
                     <td>
                       <span className="name-project">{project.title}</span>
@@ -177,8 +177,8 @@ const Portfolio = () => {
                     <td className='archive-hidden'>{project.made}</td>
                     <td className='archive-hidden'>
                       <ul>
-                        {project.category.map((category) => (
-                          <li className="technologies">{category}</li>
+                        {project.category.map((category, index) => (
+                          <li key={index} className="technologies">{category}</li>
                         ))}
                       </ul>
                     </td>

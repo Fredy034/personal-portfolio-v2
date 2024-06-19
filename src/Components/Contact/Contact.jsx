@@ -26,7 +26,7 @@ const Contact = () => {
   }
 
   useEffect (() => {
-    console.log(formData)
+    // console.log(formData)
   }, [formData])
 
   return (
@@ -43,8 +43,8 @@ const Contact = () => {
         <h3 className="h3 form-title">Contact Form</h3>
         <form action="#" className="form">
           <div className="input-wrapper">
-            <input type="text" name="fullname" placeholder='Full name' className="form-input" value={formData.fullname} onChange={handleInputChange} required />
-            <input type="email" name="email" placeholder='Email address' className="form-input" value={formData.email} onChange={handleInputChange} required />
+            <input type="text" name="fullname" placeholder='Full name' className="form-input" value={formData.fullname} onChange={handleInputChange} autoComplete='name' required />
+            <input type="email" name="email" placeholder='Email address' className="form-input" value={formData.email} onChange={handleInputChange} autoComplete='email' required />
           </div>
           <textarea name="message" className="form-input" placeholder='Your Message' value={formData.message} onChange={handleInputChange} required></textarea>
           <button className="form-btn" type='submit' disabled={!isFormValid}>

@@ -1,13 +1,28 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './Options.css';
 
-const Options = () => {
+const Options = () => {  
+  const getTheme = () => {
+    const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches;
+
+    if (localStorage.getItem('theme')) {
+      return localStorage.getItem('theme');
+    } else if (userPrefersDark) {
+      return 'dark';
+    } else {
+      return 'light';
+    }
+  }
+
   const [selectedValue, setSelectedValue] = useState('english');
   const [lastCliked, setLastClicked] = useState(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState(getTheme());
 
   useEffect(() => {
+    if (theme !== undefined && theme !== null) {
+      localStorage.setItem('theme', theme);
+    }
     document.body.setAttribute('data-theme', theme);
   }, [theme]);
 

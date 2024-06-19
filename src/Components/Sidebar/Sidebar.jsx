@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Sidebar.css';
 import { ContactData, SocialData } from './sidebarData';
 
-const Sidebar = () => {
+const Sidebar = ({isAviable = false}) => {
   const [isActive, setIsActive] = useState(false);
 
   const handleToggle = () => {
@@ -11,8 +11,6 @@ const Sidebar = () => {
 
   const iconContacts = isActive ? 'fa-solid fa-chevron-up' : 'fa-solid fa-chevron-down';
   const textContacts = isActive ? 'Hide Contacts' : 'Show Contacts';
-
-  const isAviable = true;
 
   return (
     <aside className={`sidebar${isActive ? ' active' : ''}`}>

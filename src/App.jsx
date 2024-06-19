@@ -1,20 +1,20 @@
 import './App.css'
 import About from './Components/About/About'
-import Curriculum from './Components/Curriculum/Curriculum'
-import Navbar from './Components/Navbar/Navbar'
-import { PageProvider } from './Components/PageContext'
-import Sidebar from './Components/Sidebar/Sidebar'
-import Porfolio from './Components/Portfolio/Portfolio'
 import Blog from './Components/Blog/Blog'
 import Contact from './Components/Contact/Contact'
+import Curriculum from './Components/Curriculum/Curriculum'
+import Navbar from './Components/Navbar/Navbar'
 import Options from './Components/Options/Options'
+import { PageProvider } from './Components/PageContext'
+import Porfolio from './Components/Portfolio/Portfolio'
+import Sidebar from './Components/Sidebar/Sidebar'
 
 function App() {
 
   return (
     <main>
       <div className="aside-container">
-        <Sidebar />
+        <Sidebar isAviable />
         <Options />
       </div>
       <PageProvider>
