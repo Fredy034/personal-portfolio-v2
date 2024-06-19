@@ -32,13 +32,6 @@
 .options .icon-box::before {
   transition: var(--transition-1);
 }
-.theme-switch:hover,
-.options .icon-box:hover::before {
-  background: var(--text-gradient-yellow);
-}
-.theme-switch:hover i {
-  color: var(--jet);
-}
 .options .filter-select-box {
   width: 50%;
   margin: 0;
@@ -48,6 +41,17 @@
 }
 .options .select-item {
   cursor: pointer;
+}
+
+/* hover effect */
+@media (hover: hover) {
+  .theme-switch:hover,
+  .options .icon-box:hover::before {
+    background: var(--text-gradient-yellow);
+  }
+  .theme-switch:hover i {
+    color: var(--jet);
+  }
 }
 
 /* responsive larger than 580px screen */

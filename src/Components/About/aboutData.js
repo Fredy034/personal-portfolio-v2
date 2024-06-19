@@ -1,32 +1,32 @@
 const ServicesData = [
-  {
-    id: 1,
-    image: 'assets/icon-design.svg',
-    alt: 'Web Desgin Icon',
-    title: 'Web Design',
-    text: 'The most modern and high-quality design made at a professional level.',
-  },
+  // {
+  //   id: 1,
+  //   image: 'assets/icon-design.svg',
+  //   alt: 'Web Desgin Icon',
+  //   title: 'Web Design',
+  //   text: 'Designing visually stunning and user-friendly websites that not only look great but also provide an intuitive and engaging experience for visitors.',
+  // },
   {
     id: 2,
     image: 'assets/icon-dev.svg',
     alt: 'Web Development Icon',
     title: 'Web Development',
-    text: 'The most modern and high-quality development made at a professional level.',
+    text: 'Crafting dynamic and responsive websites tailored to your needs, utilizing the latest technologies and best practices to ensure optimal performance and user experience',
   },
   {
     id: 3,
     image: 'assets/icon-app.svg',
     alt: 'Mobile Apps Icon',
     title: 'Mobile Apps',
-    text: 'The most modern and high-quality mobile apps made at a professional level.',
+    text: 'Developing intuitive and feature-rich mobile applications for both Android and iOS platforms, delivering seamless functionality and engaging user interfaces.',
   },
-  {
-    id: 4,
-    image: 'assets/icon-photo.svg',
-    alt: 'Photography Icon',
-    title: 'Photography',
-    text: 'The most modern and high-quality photography made at a professional level.',
-  },
+  // {
+  //   id: 4,
+  //   image: 'assets/icon-photo.svg',
+  //   alt: 'Photography Icon',
+  //   title: 'Photography',
+  //   text: 'Capturing moments and creating visual stories through high-quality photography, offering professional photoshoots and post-processing services to bring your vision to life.',
+  // },
 ];
 
 const TestimonialsData = [

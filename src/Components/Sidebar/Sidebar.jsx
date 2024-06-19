@@ -16,7 +16,8 @@ const Sidebar = ({isAviable = false}) => {
     <aside className={`sidebar${isActive ? ' active' : ''}`}>
       <div className="sidebar-info">
         <figure className="avatar-box">
-          <img src="./images/my-avatar.png" alt="" />
+          <img className='hover-hidden' src="./images/my-avatar.png" alt="Fredy Quintero's Avatar" />
+          <img className='hover-flex' src="./images/my-avatar-blink.png" alt="Fredy Quintero's Avatar Blinking" />
         </figure>
         <div className="info-content">
           <h1 className="name" title='Fredy Quintero'>Fredy Quintero</h1>
