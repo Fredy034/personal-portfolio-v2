@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18next from '../../../services/i18next';
 import './Options.css';
+import LanguagesData from './optionsData';
 
-const Options = () => {  
+const Options = () => {
   const getTheme = () => {
     const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches;
 
@@ -12,12 +15,54 @@ const Options = () => {
     } else {
       return 'light';
     }
-  }
+  };
+
+  const { t, i18n } = useTranslation();
+
+  const translateLanguages = (data) => {
+    return data.map((language) => {
+      return {
+        ...language,
+        lang: language.lang[i18n.language],
+      };
+    });
+  };
+
+  const Languages = translateLanguages(LanguagesData);
 
   const [selectedValue, setSelectedValue] = useState('english');
   const [lastCliked, setLastClicked] = useState(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [theme, setTheme] = useState(getTheme());
+
+  const icon =
+    theme === 'dark' ? <i className='fa-regular fa-moon active'></i> : <i className='fa-regular fa-sun active'></i>;
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
+  };
+
+  const changeLanguage = async (language) => {
+    let lng = language === 'english' ? 'en' : language === 'inglés' ? 'en' : 'es';
+    await i18next.changeLanguage(lng);
+  };
+
+  const handleSelect = (value) => {
+    setSelectedValue(value);
+    changeLanguage(value);
+  };
+
+  const handleFilterBtn = (event, value) => {
+    setSelectedValue(value);
+    changeLanguage(value);
+
+    if (lastCliked) {
+      lastCliked.classList.remove('active');
+    }
+
+    event.currentTarget.classList.add('active');
+    setLastClicked(event.currentTarget);
+  };
 
   useEffect(() => {
     if (theme !== undefined && theme !== null) {
@@ -26,63 +71,48 @@ const Options = () => {
     document.body.setAttribute('data-theme', theme);
   }, [theme]);
 
-  const Languages = ['English', 'Spanish'];
-
-  const handleSelect = (value) => {
-    setSelectedValue(value);
-  }
-
-  const handleFilterBtn = (event, value) => {
-    setSelectedValue(value);
-
-    if (lastCliked) {
-      lastCliked.classList.remove('active');
-    }
-
-    event.currentTarget.classList.add('active');
-    setLastClicked(event.currentTarget);
-  }
-
-  const toggleTheme = () => {
-    setTheme(prevTheme => (prevTheme === 'dark' ? 'light' : 'dark'));
-  };
-
-  const icon = theme === 'dark' ? <i className="fa-regular fa-moon active"></i> : <i className="fa-regular fa-sun active"></i>;
-
   return (
-    <aside className="options">
-      <button className="icon-box theme-switch" onClick={toggleTheme}>
+    <aside className='options'>
+      <button className='icon-box theme-switch' onClick={toggleTheme}>
         {icon}
       </button>
-      <ul className="filter-list">
+      <ul className='filter-list'>
         {Languages.map((language, index) => (
-          <li key={index} className="filter-item">
-            <button className={`filter-btn ${selectedValue === language.toLowerCase() ? 'active' : ''}`} onClick={(event) => handleFilterBtn(event, language.toLowerCase())} >
-              {language}
+          <li key={index} className='filter-item'>
+            <button
+              className={`filter-btn ${selectedValue === language.lang.toLowerCase() ? 'active' : ''}`}
+              onClick={(event) => handleFilterBtn(event, language.lang.toLowerCase())}
+            >
+              {language.lang}
             </button>
           </li>
-        
         ))}
+      </ul>
+      <div className='filter-select-box'>
+        <button
+          className={`filter-select ${isDropdownOpen ? 'active' : ''}`}
+          onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+        >
+          <div className='select-value'>{selectedValue.charAt(0).toUpperCase() + selectedValue.slice(1)}</div>
+          <div className='select-icon'>
+            <i className='fa-solid fa-chevron-down'></i>
+          </div>
+        </button>
+        <ul className='select-list' onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+          {Languages.map((language, index) => (
+            <li key={index} className='select-item'>
+              <button
+                className={`select-btn ${selectedValue === language.lang.toLowerCase() ? 'active' : ''}`}
+                onClick={() => handleSelect(language.lang.toLowerCase())}
+              >
+                {language.lang}
+              </button>
+            </li>
+          ))}
         </ul>
-      <div className="filter-select-box">
-          <button className={`filter-select ${isDropdownOpen ? 'active' : ''}`} onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-            <div className="select-value">{selectedValue.charAt(0).toUpperCase() + selectedValue.slice(1)}</div>
-            <div className="select-icon">
-              <i className="fa-solid fa-chevron-down"></i>
-            </div>
-          </button>
-          <ul className="select-list" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-            {Languages.map((language, index) => (
-              <li key={index} className="select-item">
-                <button className={`select-btn ${selectedValue === language.toLowerCase() ? 'active' : ''}`} onClick={() => handleSelect(language.toLowerCase())} >
-                  {language}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
+      </div>
     </aside>
-  )
-}
+  );
+};
 
-export default Options
+export default Options;

@@ -1,0 +1,30 @@
+{
+  "navbar-option-1": "About",
+  "navbar-option-2": "Curriculum",
+  "navbar-option-3": "Portfolio",
+  "navbar-option-4": "Blog",
+  "navbar-option-5": "Contact",
+
+  "sidebar-option-1": "Hide Contacts",
+  "sidebar-option-2": "Show Contacts",
+  "sidebar-title": "Full Stack Developer",
+  "sidebar-aviability-1": "Available for work",
+  "sidebar-aviability-2": "Currently busy",
+
+  "about-title": "About Me",
+  "about-text-1": "I'm Fredy Quintero, and I'm 20 years old. I'm interested in high-impact projects that will allow me to combine differents frameworks and technologies, and also, learn a lot. I'm an education enthusiastic, so I'm constantly learning that help me improve my self often. I'm always looking for new challenges and looking forward meeting new people.",
+  "about-text-2": "Thanks to my creativity, my attention to detail and my determination, I realized that I have a great talent for developing web applications. I'm fascinated by this great world of technologies and possibilities, and I am sure that I will be able to create incredible projects both professionally and personally with you.",
+  "about-subtitle-1": "What I'm doing",
+  "about-subtitle-2": "Testimonials",
+  "about-subtitle-3": "Clients",
+
+  "curriculum-title": "Curriculum",
+  "curriculum-subtitle-1": "Education",
+  "curriculum-subtitle-2": "Experience",
+  "curriculum-subtitle-3": "My Skills",
+  "curriculum-subtitle-4": "View Full Résumé",
+
+  "portfolio-title": "Portfolio",
+  "portfolio-call-title": "Do you have any project in mind?",
+  "portfolio-call-text": "I can make it real, let's work together."
+}

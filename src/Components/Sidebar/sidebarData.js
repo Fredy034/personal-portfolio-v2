@@ -2,8 +2,14 @@ const ContactData = [
   {
     id: 1,
     icon: 'fa-regular fa-envelope',
-    title: 'Email',
-    link: 'mailto:fredy034@hotmail.com',
+    title: {
+      en: 'Email',
+      es: 'Correo',
+    },
+    link: {
+      en: 'mailto:fredy034@hotmail.com',
+      es: 'mailto:fredy034@hotmail.com',
+    },
     linkText: 'fredy034@hotmail.com',
   },
   // {
@@ -16,16 +22,28 @@ const ContactData = [
   {
     id: 3,
     icon: 'fa-regular fa-calendar',
-    title: 'Birthday',
+    title: {
+      en: 'Birthdate',
+      es: 'Fecha de Nacimiento',
+    },
     dateTime: '2003-08-16',
-    linkText: 'August 16, 2003',
+    linkText: {
+      en: 'August 16, 2003',
+      es: '16 de Agosto, 2003',
+    },
     isTime: true,
   },
   {
     id: 4,
     icon: 'fa-regular fa-map',
-    title: 'Location',
-    linkText: 'Medellín, Antioquia, Colombia',
+    title: {
+      en: 'Location',
+      es: 'Ubicación',
+    },
+    linkText: {
+      en: 'Itagüí, Antioquia, Colombia',
+      es: 'Itagüí, Antioquia, Colombia',
+    },
     isAddress: true,
   },
 ];
