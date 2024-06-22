@@ -2,9 +2,16 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import i18next from '../../../services/i18next';
 import './Options.css';
-import LanguagesData from './optionsData';
 
 const Options = () => {
+  const getLang = () => {
+    if (localStorage.getItem('lang')) {
+      return localStorage.getItem('lang');
+    } else {
+      return 'english';
+    }
+  };
+
   const getTheme = () => {
     const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches;
 
@@ -17,33 +24,27 @@ const Options = () => {
     }
   };
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
-  const translateLanguages = (data) => {
-    return data.map((language) => {
-      return {
-        ...language,
-        lang: language.lang[i18n.language],
-      };
-    });
-  };
-
-  const Languages = translateLanguages(LanguagesData);
-
-  const [selectedValue, setSelectedValue] = useState('english');
+  const [selectedValue, setSelectedValue] = useState(getLang());
+  const [theme, setTheme] = useState(getTheme());
   const [lastCliked, setLastClicked] = useState(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [theme, setTheme] = useState(getTheme());
 
-  const icon =
-    theme === 'dark' ? <i className='fa-regular fa-moon active'></i> : <i className='fa-regular fa-sun active'></i>;
+  const Languages = [
+    { id: 'english', label: t('options-language-1') },
+    { id: 'spanish', label: t('options-language-2') },
+  ];
+
+  const icon = theme === 'dark' ? <i className='fa-regular fa-moon active'></i> : <i className='fa-regular fa-sun active'></i>;
+  const selectedLanguage = Languages.find((language) => language.id === selectedValue);
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
   };
 
   const changeLanguage = async (language) => {
-    let lng = language === 'english' ? 'en' : language === 'inglés' ? 'en' : 'es';
+    let lng = language === 'english' ? 'en' : 'es';
     await i18next.changeLanguage(lng);
   };
 
@@ -65,6 +66,12 @@ const Options = () => {
   };
 
   useEffect(() => {
+    if (selectedValue !== undefined && selectedValue !== null) {
+      localStorage.setItem('lang', selectedValue);
+    }
+  }, [selectedValue]);
+
+  useEffect(() => {
     if (theme !== undefined && theme !== null) {
       localStorage.setItem('theme', theme);
     }
@@ -80,10 +87,10 @@ const Options = () => {
         {Languages.map((language, index) => (
           <li key={index} className='filter-item'>
             <button
-              className={`filter-btn ${selectedValue === language.lang.toLowerCase() ? 'active' : ''}`}
-              onClick={(event) => handleFilterBtn(event, language.lang.toLowerCase())}
+              className={`filter-btn ${selectedValue === language.id.toLowerCase() ? 'active' : ''}`}
+              onClick={(event) => handleFilterBtn(event, language.id.toLowerCase())}
             >
-              {language.lang}
+              {language.label}
             </button>
           </li>
         ))}
@@ -93,7 +100,7 @@ const Options = () => {
           className={`filter-select ${isDropdownOpen ? 'active' : ''}`}
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         >
-          <div className='select-value'>{selectedValue.charAt(0).toUpperCase() + selectedValue.slice(1)}</div>
+          <div className='select-value'>{selectedLanguage ? selectedLanguage.label : 'Language not found'}</div>
           <div className='select-icon'>
             <i className='fa-solid fa-chevron-down'></i>
           </div>
@@ -102,10 +109,10 @@ const Options = () => {
           {Languages.map((language, index) => (
             <li key={index} className='select-item'>
               <button
-                className={`select-btn ${selectedValue === language.lang.toLowerCase() ? 'active' : ''}`}
-                onClick={() => handleSelect(language.lang.toLowerCase())}
+                className={`select-btn ${selectedValue === language.id.toLowerCase() ? 'active' : ''}`}
+                onClick={() => handleSelect(language.id.toLowerCase())}
               >
-                {language.lang}
+                {language.label}
               </button>
             </li>
           ))}

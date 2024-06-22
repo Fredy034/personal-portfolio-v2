@@ -6,11 +6,11 @@ const ContactData = [
       en: 'Email',
       es: 'Correo',
     },
-    link: {
-      en: 'mailto:fredy034@hotmail.com',
-      es: 'mailto:fredy034@hotmail.com',
+    link: 'mailto:fredy034@hotmail.com',
+    linkText: {
+      en: 'fredy034@hotmail.com',
+      es: 'fredy034@hotmail.com',
     },
-    linkText: 'fredy034@hotmail.com',
   },
   // {
   //   id: 2,

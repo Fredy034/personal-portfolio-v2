@@ -1,8 +1,8 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { usePageContext } from '../PageContext';
 import './Portfolio.css';
 import { ArchiveData, ProjectsData } from './portfolioData';
-import { useTranslation } from 'react-i18next';
 
 const Portfolio = () => {
   const { t, i18n } = useTranslation();
@@ -11,14 +11,34 @@ const Portfolio = () => {
   const [selectedValue, setSelectedValue] = useState('all');
   const [lastCliked, setLastClicked] = useState(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
   const [isArchiveActive, setIsArchiveActive] = useState(false);
+
+  const Categories = [
+    { id: 'all', label: t('portfolio-filter-1') },
+    { id: 'web development', label: t('portfolio-filter-2') },
+    { id: 'mobile development', label: t('portfolio-filter-3') },
+    { id: 'desktop development', label: t('portfolio-filter-4') },
+  ];
+
+  const selectedCategory = Categories.find((category) => category.id === selectedValue);
+
+  const translateProjects = (data) => {
+    return data.map((project) => {
+      return {
+        ...project,
+        title: project.title[i18n.language],
+        made: project.made[i18n.language],
+        description: project.description[i18n.language],
+      };
+    });
+  };
+
+  const Projects = translateProjects(ProjectsData);
+  const Archive = translateProjects(ArchiveData);
 
   const toggleArchive = () => {
     setIsArchiveActive(!isArchiveActive);
   };
-
-  const Categories = ['All', 'Web Development', 'Mobile Development', 'Desktop Development'];
 
   const handleSelect = (value) => {
     setSelectedValue(value);
@@ -26,7 +46,7 @@ const Portfolio = () => {
   };
 
   const filterFunc = (selectedValue) => {
-    return ProjectsData.map((project) => {
+    return Projects.map((project) => {
       if (selectedValue === 'all' || project.category.map((c) => c.toLowerCase()).includes(selectedValue)) {
         return { ...project, active: true };
       } else {
@@ -62,10 +82,7 @@ const Portfolio = () => {
           <a href='https://www.linkedin.com/in/fredy-quintero' className='button-social'>
             LinkedIn
           </a>
-          <a
-            href="mailto:fredy034@hotmail.com?Subject=I'm ineterested on working with you in a project"
-            className='button-social'
-          >
+          <a href={`mailto:fredy034@hotmail.com?Subject=${t('portfolio-call-subject')}`} className='button-social'>
             Hotmail
           </a>
         </div>
@@ -76,10 +93,10 @@ const Portfolio = () => {
           {Categories.map((category, index) => (
             <li key={index} className='filter-item'>
               <button
-                className={`filter-btn ${selectedValue === category.toLowerCase() ? 'active' : ''}`}
-                onClick={(event) => handleFilterBtn(event, category.toLowerCase())}
+                className={`filter-btn ${selectedValue === category.id.toLowerCase() ? 'active' : ''}`}
+                onClick={(event) => handleFilterBtn(event, category.id.toLowerCase())}
               >
-                {category}
+                {category.label}
               </button>
             </li>
           ))}
@@ -89,7 +106,7 @@ const Portfolio = () => {
             className={`filter-select ${isDropdownOpen ? 'active' : ''}`}
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           >
-            <div className='select-value'>{selectedValue.charAt(0).toUpperCase() + selectedValue.slice(1)}</div>
+            <div className='select-value'>{selectedCategory ? selectedCategory.label : 'Category not found'}</div>
             <div className='select-icon'>
               <i className='fa-solid fa-chevron-down'></i>
             </div>
@@ -98,10 +115,10 @@ const Portfolio = () => {
             {Categories.map((category, index) => (
               <li key={index} className='select-item'>
                 <button
-                  className={`select-btn ${selectedValue === category.toLowerCase() ? 'active' : ''}`}
-                  onClick={() => handleSelect(category.toLowerCase())}
+                  className={`select-btn ${selectedValue === category.id.toLowerCase() ? 'active' : ''}`}
+                  onClick={() => handleSelect(category.id.toLowerCase())}
                 >
-                  {category}
+                  {category.label}
                 </button>
               </li>
             ))}
@@ -114,21 +131,21 @@ const Portfolio = () => {
                 <figure className='project-img'>
                   <div className='project-item-icon-container'>
                     {project.demo !== '' ? (
-                      <a href={project.demo} target='_blank' title='View Demo'>
+                      <a href={project.demo} target='_blank' title={t('portfolio-click-title-1')}>
                         <div className='project-item-icon-box'>
                           <i className='fa-solid fa-arrow-up-right-from-square'></i>
                         </div>
                       </a>
                     ) : null}
                     {project.github !== '' ? (
-                      <a href={project.github} target='_blank' title='View Code'>
+                      <a href={project.github} target='_blank' title={t('portfolio-click-title-2')}>
                         <div className='project-item-icon-box'>
                           <i className='fa-brands fa-github'></i>
                         </div>
                       </a>
                     ) : null}
                     {project.figma !== '' ? (
-                      <a href={project.github} target='_blank' title='View Figma'>
+                      <a href={project.github} target='_blank' title={t('portfolio-click-title-3')}>
                         <div className='project-item-icon-box'>
                           <i className='fa-brands fa-figma'></i>
                         </div>
@@ -140,7 +157,9 @@ const Portfolio = () => {
                 <div className='project-header'>
                   <h3 className='project-title'>{project.title}</h3>
                   <div className='dot'></div>
-                  <h5 className='project-date'>Developed in {project.date}</h5>
+                  <h5 className='project-date'>
+                    {t('portfolio-project-date')} {project.date}
+                  </h5>
                 </div>
                 <p className='project-description'>{project.description}</p>
                 <div className='project-category-container'>
@@ -157,7 +176,7 @@ const Portfolio = () => {
       </section>
       <section className='archive-projects'>
         <div className='archive-btn' onClick={toggleArchive}>
-          <span className='archive-text'>View full project archive</span>
+          <span className='archive-text'>{t('portfolio-subtitle-1')}</span>
           <i className='fa-solid fa-arrow-right'></i>
         </div>
       </section>
@@ -168,21 +187,21 @@ const Portfolio = () => {
             <i className='fa-solid fa-xmark'></i>
           </button>
           <header>
-            <h2 className='h2 article-title'>All my projects</h2>
+            <h2 className='h2 article-title'>{t('portfolio-modal-title')}</h2>
           </header>
           <div className='table-archive-container'>
             <table className='archive-container'>
               <thead>
                 <tr>
-                  <th>Year</th>
-                  <th>Project</th>
-                  <th className='archive-hidden'>Made at</th>
-                  <th className='archive-hidden'>Built with</th>
-                  <th>Links</th>
+                  <th>{t('portfolio-modal-table-1')}</th>
+                  <th>{t('portfolio-modal-table-2')}</th>
+                  <th className='archive-hidden'>{t('portfolio-modal-table-3')}</th>
+                  <th className='archive-hidden'>{t('portfolio-modal-table-4')}</th>
+                  <th>{t('portfolio-modal-table-5')}</th>
                 </tr>
               </thead>
               <tbody>
-                {ArchiveData.map((project, index) => (
+                {Archive.map((project, index) => (
                   <tr key={index}>
                     <td>{project.date}</td>
                     <td>
@@ -201,17 +220,32 @@ const Portfolio = () => {
                     <td>
                       <div className='archive-link-container'>
                         {project.demo !== '' ? (
-                          <a href={project.demo} target='_blank' className='archive-link' title='View Demo'>
+                          <a
+                            href={project.demo}
+                            target='_blank'
+                            className='archive-link'
+                            title={t('portfolio-click-title-1')}
+                          >
                             <i className='fa-solid fa-arrow-up-right-from-square'></i>
                           </a>
                         ) : null}
                         {project.github !== '' ? (
-                          <a href={project.github} target='_blank' className='archive-link' title='View Code'>
+                          <a
+                            href={project.github}
+                            target='_blank'
+                            className='archive-link'
+                            title={t('portfolio-click-title-2')}
+                          >
                             <i className='fa-brands fa-github'></i>
                           </a>
                         ) : null}
                         {project.figma !== '' ? (
-                          <a href={project.github} target='_blank' className='archive-link' title='View Figma'>
+                          <a
+                            href={project.github}
+                            target='_blank'
+                            className='archive-link'
+                            title={t('portfolio-click-title-3')}
+                          >
                             <i className='fa-brands fa-figma'></i>
                           </a>
                         ) : null}

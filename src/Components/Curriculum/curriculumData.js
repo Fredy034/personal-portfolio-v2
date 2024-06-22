@@ -50,22 +50,22 @@ const EducationData = [
 ];
 
 const ExperienceData = [
-  {
-    id: 1,
-    title: {
-      en: 'Web Developer',
-      es: 'Desarrollador Web',
-    },
-    company: 'School',
-    date: {
-      en: '05/2020 - 11/2020',
-      es: '05/2020 - 11/2020',
-    },
-    description: {
-      en: "I dedicated six months creating a final project on the school I'm graduated from. Aim of the project: Enhance student understanding of physics, chemistry, and biology.",
-      es: 'Dediqué seis meses a crear un proyecto final en la escuela de la que me gradué. Objetivo del proyecto: Mejorar la comprensión de los estudiantes de física, química y biología.',
-    },
-  },
+  // {
+  //   id: 1,
+  //   title: {
+  //     en: 'Web Developer',
+  //     es: 'Desarrollador Web',
+  //   },
+  //   company: 'School',
+  //   date: {
+  //     en: '05/2020 - 11/2020',
+  //     es: '05/2020 - 11/2020',
+  //   },
+  //   description: {
+  //     en: "I dedicated six months creating a final project on the school I'm graduated from. Aim of the project: Enhance student understanding of physics, chemistry, and biology.",
+  //     es: 'Dediqué seis meses a crear un proyecto final en la escuela de la que me gradué. Objetivo del proyecto: Mejorar la comprensión de los estudiantes de física, química y biología.',
+  //   },
+  // },
 ];
 
 const SkillsData = [

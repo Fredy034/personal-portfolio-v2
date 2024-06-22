@@ -68,20 +68,24 @@ const Curriculum = () => {
           <h3 className='h3'>{t('curriculum-subtitle-2')}</h3>
         </div>
         <ol className='timeline-list'>
-          {Experience.map((experience) => (
-            <li key={experience.id} className='timeline-item'>
-              <div className='timeline-title'>
-                <h4 className='h4 timeline-item-title'>{experience.title}</h4>
-                <span className='dot'></span>
-                <span className='timeline-item-subtitle'>{experience.company}</span>
-              </div>
-              <div className='timeline-year'>
-                <i className='fa-regular fa-calendar-days'></i>
-                <span>{experience.date}</span>
-              </div>
-              <p className='timeline-text'>{experience.description}</p>
-            </li>
-          ))}
+          {Experience.length === 0 ? (
+            <p className='no-experience'>{t('curriculum-no-experience')}</p>
+          ) : (
+            Experience.map((experience) => (
+              <li key={experience.id} className='timeline-item'>
+                <div className='timeline-title'>
+                  <h4 className='h4 timeline-item-title'>{experience.title}</h4>
+                  <span className='dot'></span>
+                  <span className='timeline-item-subtitle'>{experience.company}</span>
+                </div>
+                <div className='timeline-year'>
+                  <i className='fa-regular fa-calendar-days'></i>
+                  <span>{experience.date}</span>
+                </div>
+                <p className='timeline-text'>{experience.description}</p>
+              </li>
+            ))
+          )}
         </ol>
       </section>
       <section className='skill'>

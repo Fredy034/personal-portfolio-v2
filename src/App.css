@@ -128,6 +128,10 @@ main {
   margin-bottom: 75px;
   min-width: 259px;
 }
+.aside-container {
+  overflow: hidden;
+  transition: var(--transition-2);
+}
 
 /* responsive larger than 580px screen */
 @media (min-width: 580px) {
@@ -152,6 +156,8 @@ main {
     border-radius: 12px;
     font-size: 18px;
   }
+
+  /* #MAIN */
   main {
     margin-top: 60px;
     margin-bottom: 100px;
@@ -201,8 +207,9 @@ main {
     min-height: 100%;
   }
 
+  /* #MAIN */
   main {
-    max-width: 1200px;
+    max-width: 1250px;
     margin-inline: auto;
     display: flex;
     justify-content: center;
@@ -210,10 +217,17 @@ main {
     gap: 25px;
   }
   .aside-container {
+    position: sticky;
+    top: 60px;
+    margin-bottom: 0;
+    min-width: 320px;
+    max-height: max-content;
+    height: 100%;
     display: flex;
     flex-direction: column-reverse;
-    gap: 25px;
     justify-content: flex-end;
+    gap: 25px;
+    z-index: 1;
   }
   .main-content {
     min-width: 75%;

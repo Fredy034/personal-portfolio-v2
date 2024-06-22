@@ -16,6 +16,12 @@
   font-size: var(--fs-6);
   margin-left: 45px;
 }
+.timeline-list > .no-experience {
+  margin-top: -20px;
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-300);
+}
 .timeline-item {
   position: relative;
 }

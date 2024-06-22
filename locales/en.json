@@ -5,6 +5,9 @@
   "navbar-option-4": "Blog",
   "navbar-option-5": "Contact",
 
+  "options-language-1": "English",
+  "options-language-2": "Spanish",
+
   "sidebar-option-1": "Hide Contacts",
   "sidebar-option-2": "Show Contacts",
   "sidebar-title": "Full Stack Developer",
@@ -23,8 +26,32 @@
   "curriculum-subtitle-2": "Experience",
   "curriculum-subtitle-3": "My Skills",
   "curriculum-subtitle-4": "View Full Résumé",
+  "curriculum-no-experience": "Currently, I do not have professional experience in the field of computer engineering. However, I am developing various personal and university projects that allow me to advance and improve my skills in this area. I am committed to continuous learning and apply my theoretical knowledge in practical situations to acquire relevant skills and be better prepared for future professional challenges.",
 
   "portfolio-title": "Portfolio",
+  "portfolio-filter-1": "All",
+  "portfolio-filter-2": "Web Development",
+  "portfolio-filter-3": "Mobile Development",
+  "portfolio-filter-4": "Desktop Development",
   "portfolio-call-title": "Do you have any project in mind?",
-  "portfolio-call-text": "I can make it real, let's work together."
+  "portfolio-call-text": "I can make it real, let's work together.",
+  "portfolio-call-subject": "I'm ineterested on working with you in a project",
+  "portfolio-project-date": "Developed in",
+  "portfolio-subtitle-1": "View full project archive",
+  "portfolio-modal-title": "All my projects",
+  "portfolio-modal-table-1": "Year",
+  "portfolio-modal-table-2": "Project",
+  "portfolio-modal-table-3": "Made at",
+  "portfolio-modal-table-4": "Built with",
+  "portfolio-modal-table-5": "View Project",
+  "portfolio-click-title-1": "View Demo",
+  "portfolio-click-title-2": "View Code",
+  "portfolio-click-title-3": "View Figma",
+
+  "contact-title": "Contact",
+  "contact-subtitle-1": "Contact Form",
+  "contact-placeholder-1": "Full name",
+  "contact-placeholder-2": "Email address",
+  "contact-placeholder-3": "Your Message",
+  "contact-button": "Send Message"
 }
