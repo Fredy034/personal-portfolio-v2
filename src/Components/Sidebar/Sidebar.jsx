@@ -30,8 +30,21 @@ const Sidebar = ({ isAviable = false }) => {
     <aside className={`sidebar${isActive ? ' active' : ''}`}>
       <div className='sidebar-info'>
         <figure className='avatar-box'>
-          <img className='hover-hidden' src='./images/my-avatar.png' alt="Fredy Quintero's Avatar" />
-          <img className='hover-flex' src='./images/my-avatar-blink.png' alt="Fredy Quintero's Avatar Blinking" />
+          <img
+            className='hover-hidden'
+            src='./images/avatar/my-avatar.webp'
+            alt="Fredy Quintero's Avatar"
+            width='100%'
+            height='auto'
+          />
+          <img
+            className='hover-flex'
+            src='./images/avatar/my-avatar-blink.webp'
+            alt="Fredy Quintero's Avatar Blinking"
+            width='100%'
+            height='auto'
+            loading='lazy'
+          />
         </figure>
         <div className='info-content'>
           <h1 className='name' title='Fredy Quintero'>
@@ -45,7 +58,7 @@ const Sidebar = ({ isAviable = false }) => {
             </span>
           </div>
         </div>
-        <button className='info_more-btn' onClick={handleToggle}>
+        <button className='info_more-btn' aria-label={`Toggle ${textContacts}`} onClick={handleToggle}>
           <span>{textContacts}</span>
           <i className={iconContacts}></i>
         </button>
@@ -65,7 +78,7 @@ const Sidebar = ({ isAviable = false }) => {
                 ) : item.isAddress ? (
                   <address>{item.linkText}</address>
                 ) : (
-                  <a href={item.link} className='contact-link'>
+                  <a href={item.link} className='contact-link' aria-label='Contact me through email'>
                     {item.linkText}
                   </a>
                 )}
@@ -77,7 +90,12 @@ const Sidebar = ({ isAviable = false }) => {
         <ul className='social-list'>
           {SocialData.map((item) => (
             <li key={item.id} className='social-item'>
-              <a href={item.link} className='social-link'>
+              <a
+                href={item.link}
+                className='social-link'
+                aria-label={`Contact me through ${item.alt}`}
+                title={`View ${item.alt}`}
+              >
                 <i className={item.icon}></i>
               </a>
             </li>

@@ -80,7 +80,7 @@ const Options = () => {
 
   return (
     <aside className='options'>
-      <button className='icon-box theme-switch' onClick={toggleTheme}>
+      <button className='icon-box theme-switch' aria-label='Toggle web page theme' onClick={toggleTheme}>
         {icon}
       </button>
       <ul className='filter-list'>

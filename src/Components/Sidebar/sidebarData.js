@@ -57,11 +57,13 @@ const SocialData = [
   {
     id: 2,
     icon: 'fa-brands fa-linkedin',
+    alt: 'LinkedIn',
     link: 'https://www.linkedin.com/in/fredy-quintero',
   },
   {
     id: 3,
     icon: 'fa-brands fa-github',
+    alt: 'GitHub',
     link: 'https://github.com/Fredy034',
   },
 ];

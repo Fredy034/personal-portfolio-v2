@@ -59,7 +59,7 @@ const About = () => {
           {Services.map((service) => (
             <li key={service.id} className='service-item'>
               <div className='service-icon-box'>
-                <img src={service.image} alt={service.alt} width={40} />
+                <img src={service.image} alt={service.alt} width={40} height={'auto'} loading='lazy' />
               </div>
               <div className='service-content-box'>
                 <h4 className='h4 service-item-title'>{service.title}</h4>
@@ -99,7 +99,7 @@ const About = () => {
           </button>
           <div className='modal-img-wrapper'>
             <figure className='modal-avatar-box'>
-              <img src={modalContent.avatar} alt={`${modalContent.name} Avatar`} width={60} />
+              <img src={modalContent.avatar} alt={`${modalContent.name} Avatar`} width={60} height={'auto'} loading='lazy' />
             </figure>
             <img src='/assets/icon-quote.svg' alt='Quote Icon' />
           </div>
