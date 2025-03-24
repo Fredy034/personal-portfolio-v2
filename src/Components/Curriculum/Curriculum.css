@@ -91,6 +91,13 @@
   font-weight: var(--fw-300);
   line-height: 1.6;
 }
+.timeline-text-list {
+  margin-block: 5px;
+  margin-left: 20px;
+}
+.timeline-text-list-item {
+  list-style-type: circle;
+}
 
 /* skils */
 .skills-title {

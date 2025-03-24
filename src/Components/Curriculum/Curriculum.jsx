@@ -82,7 +82,17 @@ const Curriculum = () => {
                   <i className='fa-regular fa-calendar-days'></i>
                   <span>{experience.date}</span>
                 </div>
-                <p className='timeline-text'>{experience.description}</p>
+                <p className='timeline-text'>
+                  {experience.description.split('\n').map((line, index) =>
+                    index === 0 ? (
+                      <p key={index}>{line.trim()}</p>
+                    ) : (
+                      <ul key={index} className='timeline-text-list'>
+                        <li className='timeline-text-list-item'>{line.trim()}</li>
+                      </ul>
+                    )
+                  )}
+                </p>
               </li>
             ))
           )}
