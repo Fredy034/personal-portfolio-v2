@@ -1,8 +1,61 @@
-# React + Vite
+# Personal Portfolio v2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the source code for my personal portfolio website, showcasing my skills, projects, and professional journey. It is built with modern web technologies like React and Vite.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Presents comprehensive information about my background, technical skills, and project experience.
+- Features a curated list of my projects with descriptions and links.
+- Supports multiple languages (currently English and Spanish) through `react-i18next` for broader accessibility.
+- Designed with responsiveness in mind to ensure optimal viewing on various devices.
+
+## Technologies Used
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [React Router](https://reactrouter.com/) (Implicitly used for navigation if applicable, confirm if needed)
+- [react-i18next](https://react.i18next.com/) for internationalization
+- CSS for styling
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or later recommended)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone git@github.com:Fredy034/personal-portfolio-v2.git
+   cd personal-portfolio-v2
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the Development Server
+
+```bash
+npm run dev
+```
+
+This will start the Vite development server, typically available at `http://localhost:5173`.
+
+### Building for Production
+
+```bash
+npm run build
+```
+
+This command builds the application for production to the `dist` folder.
+
+### Linting
+
+```bash
+npm run lint
+```
+
+This command runs ESLint to check for code style issues.
