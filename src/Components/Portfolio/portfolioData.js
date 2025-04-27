@@ -61,7 +61,7 @@ const ProjectsData = [
   },
   {
     demo: 'https://fredy034.neocities.org/MovieVerse/index.html',
-    github: '',
+    github: 'https://github.com/Fredy034/MovieVerse',
     figma: '',
     title: {
       en: 'MovieVerse',
