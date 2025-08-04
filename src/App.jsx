@@ -13,7 +13,7 @@ function App() {
   return (
     <main>
       <div className='aside-container'>
-        <Sidebar isAviable />
+        <Sidebar isAvailable />
         <Options />
       </div>
       <PageProvider>

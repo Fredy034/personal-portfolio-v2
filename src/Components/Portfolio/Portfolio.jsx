@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { usePageContext } from '../PageContext';
 import './Portfolio.css';
 import { ArchiveData, ProjectsData } from './portfolioData';
+import { translateProjects } from '../../helpers/translate';
 
 const Portfolio = () => {
   const { t, i18n } = useTranslation();
@@ -22,19 +23,8 @@ const Portfolio = () => {
 
   const selectedCategory = Categories.find((category) => category.id === selectedValue);
 
-  const translateProjects = (data) => {
-    return data.map((project) => {
-      return {
-        ...project,
-        title: project.title[i18n.language],
-        made: project.made[i18n.language],
-        description: project.description[i18n.language],
-      };
-    });
-  };
-
-  const Projects = translateProjects(ProjectsData);
-  const Archive = translateProjects(ArchiveData);
+  const Projects = translateProjects(ProjectsData, i18n.language);
+  const Archive = translateProjects(ArchiveData, i18n.language);
 
   const toggleArchive = () => {
     setIsArchiveActive(!isArchiveActive);

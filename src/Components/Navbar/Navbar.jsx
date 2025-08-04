@@ -10,8 +10,8 @@ const Navbar = () => {
     { id: 'about', label: t('navbar-option-1') },
     { id: 'curriculum', label: t('navbar-option-2') },
     { id: 'portfolio', label: t('navbar-option-3') },
-    // { id: 'blog', label: t('navbar-option-4') },
-    // { id: 'contact', label: t('navbar-option-5') },
+    { id: 'blog', label: t('navbar-option-4') },
+    { id: 'contact', label: t('navbar-option-5') },
   ];
 
   const handleNavLinkClick = (page) => {

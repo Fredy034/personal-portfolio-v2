@@ -1,24 +1,15 @@
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { translateContacts } from '../../helpers/translate';
 import './Sidebar.css';
 import { ContactData, SocialData } from './sidebarData';
-import PropTypes from 'prop-types';
 
-const Sidebar = ({ isAviable = false }) => {
+const Sidebar = ({ isAvailable = false }) => {
   const { t, i18n } = useTranslation();
   const [isActive, setIsActive] = useState(false);
 
-  const translateContacts = (data) => {
-    return data.map((contact) => {
-      return {
-        ...contact,
-        title: contact.title[i18n.language],
-        linkText: contact.linkText[i18n.language],
-      };
-    });
-  };
-
-  const Contacts = translateContacts(ContactData);
+  const Contacts = translateContacts(ContactData, i18n.language);
 
   const handleToggle = () => {
     setIsActive(!isActive);
@@ -58,9 +49,9 @@ const Sidebar = ({ isAviable = false }) => {
           </h1>
           <p className='title'>{t('sidebar-title')}</p>
           <div className='availability-container'>
-            <span className={`availability-status ${isAviable ? '' : 'offline'}`}></span>
+            <span className={`availability-status ${isAvailable ? '' : 'offline'}`}></span>
             <span className='availability-title'>
-              {isAviable ? t('sidebar-aviability-1') : t('sidebar-aviability-2')}
+              {isAvailable ? t('sidebar-aviability-1') : t('sidebar-aviability-2')}
             </span>
           </div>
         </div>
@@ -112,7 +103,7 @@ const Sidebar = ({ isAviable = false }) => {
   );
 };
 Sidebar.propTypes = {
-  isAviable: PropTypes.bool
+  isAvailable: PropTypes.bool,
 };
 
 export default Sidebar;

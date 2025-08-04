@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { translateCourses, translateEducation, translateSkills } from '../../helpers/translate';
 import { usePageContext } from '../PageContext';
 import './Curriculum.css';
 import { CoursesData, EducationData, ExperienceData, OtherTechnologiesData, SkillsData } from './curriculumData';
@@ -7,41 +8,11 @@ const Curriculum = () => {
   const { t, i18n } = useTranslation();
   const { activePage } = usePageContext();
 
-  const translateEducation = (data) => {
-    return data.map((education) => {
-      return {
-        ...education,
-        title: education.title[i18n.language],
-        date: education.date[i18n.language],
-        description: education.description[i18n.language],
-      };
-    });
-  };
-
-  const translateSkills = (data) => {
-    return data.map((skill) => {
-      return {
-        ...skill,
-        description: skill.description[i18n.language],
-      };
-    });
-  };
-
-  const translateCourses = (data) => {
-    return data.map((course) => {
-      return {
-        ...course,
-        title: course.title[i18n.language],
-        date: course.date[i18n.language],
-      };
-    });
-  };
-
-  const Education = translateEducation(EducationData);
-  const Experience = translateEducation(ExperienceData);
-  const Skills = translateSkills(SkillsData);
+  const Education = translateEducation(EducationData, i18n.language);
+  const Experience = translateEducation(ExperienceData, i18n.language);
+  const Skills = translateSkills(SkillsData, i18n.language);
   const Technologies = OtherTechnologiesData;
-  const Courses = translateCourses(CoursesData);
+  const Courses = translateCourses(CoursesData, i18n.language);
 
   return (
     <article className={`resume ${activePage === 'curriculum' ? 'active' : ''}`}>
@@ -195,7 +166,7 @@ const Curriculum = () => {
                 <div className='timeline-title'>
                   <img src={course.image} alt={course.provider} title={course.provider} />
                   <span>{course.date}</span>
-                  <div className="dot"></div>
+                  <div className='dot'></div>
                   <h4 className='h4 timeline-item-title'>{course.title}</h4>
                   <span className='timeline-item-subtitle'>by {course.provider}</span>
                 </div>

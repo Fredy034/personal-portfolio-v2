@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from 'react';
+import PropTypes from 'prop-types';
 
 const PageContext = createContext();
 
@@ -10,6 +11,10 @@ export const PageProvider = ({ children }) => {
       {children}
     </PageContext.Provider>
   );
+};
+
+PageProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export const usePageContext = () => useContext(PageContext);

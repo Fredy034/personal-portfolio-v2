@@ -27,7 +27,7 @@ const ProjectsData = [
       'Cloudinary',
       'REST API',
     ],
-    image: '/images/code-journey.jpg',
+    image: '/images/thumbnails/code-journey.jpg',
   },
   {
     demo: 'https://codejourney.netlify.app/',
@@ -57,7 +57,7 @@ const ProjectsData = [
       'Vite',
       'Netlify',
     ],
-    image: '/images/code-journey-lp.png',
+    image: '/images/thumbnails/code-journey-lp.png',
   },
   {
     demo: 'https://fredy034.neocities.org/MovieVerse/index.html',
@@ -77,7 +77,7 @@ const ProjectsData = [
       es: 'MovieVerse es una aplicación de películas líder creada por Fredy Quintero, utilizando la poderosa API de TMDb para proporcionar información completa sobre películas y entretenimiento. Explore el mundo del cine con MovieVerse y descubra sus películas, actores y más favoritos.',
     },
     category: ['Web Development', 'HTML', 'CSS', 'Vanilla JS', 'API', 'Responsive Design'],
-    image: '/images/movieverse_lp.jpg',
+    image: '/images/thumbnails/movieverse_lp.jpg',
   },
   {
     demo: '',
@@ -97,7 +97,7 @@ const ProjectsData = [
       es: 'Aplicación de escritorio creada con C#. Esta aplicación incluye el registro y login de usuarios, el proceso de reserva y mucho más por explorar.',
     },
     category: ['Desktop Development', 'C#', 'WinForms', 'SQL Server'],
-    image: '/images/pawsinn-lp.jpg',
+    image: '/images/thumbnails/pawsinn-lp.jpg',
   },
   {
     demo: 'https://fredy034.neocities.org/',
@@ -118,7 +118,7 @@ const ProjectsData = [
       es: 'Curando un portafolio digital que muestra mis diversos proyectos, desde soluciones tecnológicas innovadoras hasta emprendimientos creativos, destacando mis habilidades y pasión.',
     },
     category: ['Web Development', 'Responsive Design', 'HTML', 'CSS', 'JavaScript'],
-    image: '/images/portfolio-v1-lp.jpg',
+    image: '/images/thumbnails/portfolio-v1-lp.jpg',
   },
 ];
 

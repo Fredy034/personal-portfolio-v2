@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { translateService, translateTestimonials } from '../../helpers/translate';
 import { usePageContext } from '../PageContext';
 import './About.css';
-import { ClientsData, ServicesData, TestimonialsData } from './aboutData';
-import { useTranslation } from 'react-i18next';
+import { ServicesData, TestimonialsData } from './aboutData';
 
 const About = () => {
   const { t, i18n } = useTranslation();
@@ -11,28 +12,8 @@ const About = () => {
   const [modalActive, setModalActive] = useState(false);
   const [modalContent, setModalContent] = useState({});
 
-  const translateService = (data) => {
-    return data.map((service) => {
-      return {
-        ...service,
-        alt: service.alt[i18n.language],
-        title: service.title[i18n.language],
-        text: service.text[i18n.language],
-      };
-    });
-  };
-
-  const translateTestimonials = (data) => {
-    return data.map((testimonial) => {
-      return {
-        ...testimonial,
-        text: testimonial.text[i18n.language],
-      };
-    });
-  };
-
-  const Services = translateService(ServicesData);
-  const Testimonials = translateTestimonials(TestimonialsData);
+  const Services = translateService(ServicesData, i18n.language);
+  const Testimonials = translateTestimonials(TestimonialsData, i18n.language);
 
   const toggleModal = () => {
     setModalActive(!modalActive);
@@ -99,7 +80,13 @@ const About = () => {
           </button>
           <div className='modal-img-wrapper'>
             <figure className='modal-avatar-box'>
-              <img src={modalContent.avatar} alt={`${modalContent.name} Avatar`} width={60} height={'auto'} loading='lazy' />
+              <img
+                src={modalContent.avatar}
+                alt={`${modalContent.name} Avatar`}
+                width={60}
+                height={'auto'}
+                loading='lazy'
+              />
             </figure>
             <img src='/assets/icon-quote.svg' alt='Quote Icon' />
           </div>
