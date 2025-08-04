@@ -8,6 +8,7 @@ import Options from './Components/Options/Options';
 import { PageProvider } from './Components/PageContext';
 import Porfolio from './Components/Portfolio/Portfolio';
 import Sidebar from './Components/Sidebar/Sidebar';
+import Skills from './Components/Skills/Skills';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Navbar />
           <About />
           <Curriculum />
+          <Skills />
           <Porfolio />
           <Blog />
           <Contact />

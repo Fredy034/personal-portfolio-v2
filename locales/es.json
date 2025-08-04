@@ -1,9 +1,10 @@
 {
   "navbar-option-1": "Sobre mí",
   "navbar-option-2": "Currículum",
-  "navbar-option-3": "Portafolio",
-  "navbar-option-4": "Blog",
-  "navbar-option-5": "Contacto",
+  "navbar-option-3": "Habilidades",
+  "navbar-option-4": "Portafolio",
+  "navbar-option-5": "Blog",
+  "navbar-option-6": "Contacto",
 
   "options-language-1": "Inglés",
   "options-language-2": "Español",
@@ -21,15 +22,16 @@
   "about-subtitle-2": "Testimonios",
   "about-subtitle-3": "Clientes",
 
+  "skills-title": "Habilidades",
+  "skills-text-1": "En mi trayectoria como desarrollador frontend me he especializado en un conjunto de tecnologías modernas que me permiten crear experiencias interactivas, accesibles y mantenibles. A través de mi conocimiento en lenguajes, frameworks y herramientas de diseño y despliegue, puedo llevar una idea desde el concepto hasta su puesta en producción con alta calidad y rendimiento. Estas son algunas de las tecnologías que manejo:",
+  "skills-subtitle-1": "Otras tecnologías",
+
   "curriculum-title": "Currículum",
   "curriculum-subtitle-1": "Educación",
   "curriculum-subtitle-2": "Experiencia",
-  "curriculum-subtitle-3": "Mis Habilidades",
+  "curriculum-subtitle-3": "Cursos y Certificaciones",
   "curriculum-subtitle-4": "Ver currículum completo",
   "curriculum-no-experience": "Actualmente, no cuento con experiencia profesional en el campo de la ingeniería informática. Sin embargo, me encuentro desarrollando diversos proyectos personales y universitarios que me permiten avanzar y mejorar mis capacidades en este ámbito. Estoy comprometido con mi formación continua y aplico mis conocimientos teóricos en situaciones prácticas para adquirir habilidades relevantes y estar mejor preparado para futuros desafíos profesionales.",
-  "curriculum-skills-text-1": "En mi trayectoria como desarrollador frontend me he especializado en un conjunto de tecnologías modernas que me permiten crear experiencias interactivas, accesibles y mantenibles. A través de mi conocimiento en lenguajes, frameworks y herramientas de diseño y despliegue, puedo llevar una idea desde el concepto hasta su puesta en producción con alta calidad y rendimiento. Estas son algunas de las tecnologías que manejo:",
-  "curriculum-subtitle-5": "Otras tecnologías",
-  "curriculum-subtitle-6": "Cursos y Certificaciones",
 
   "portfolio-title": "Portafolio",
   "portfolio-filter-1": "Todos",

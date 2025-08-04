@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
-import { translateCourses, translateEducation, translateSkills } from '../../helpers/translate';
+import { translateCourses, translateEducation } from '../../helpers/translate';
 import { usePageContext } from '../PageContext';
 import './Curriculum.css';
-import { CoursesData, EducationData, ExperienceData, OtherTechnologiesData, SkillsData } from './curriculumData';
+import { CoursesData, EducationData, ExperienceData } from './curriculumData';
 
 const Curriculum = () => {
   const { t, i18n } = useTranslation();
@@ -10,8 +10,6 @@ const Curriculum = () => {
 
   const Education = translateEducation(EducationData, i18n.language);
   const Experience = translateEducation(ExperienceData, i18n.language);
-  const Skills = translateSkills(SkillsData, i18n.language);
-  const Technologies = OtherTechnologiesData;
   const Courses = translateCourses(CoursesData, i18n.language);
 
   return (
@@ -84,94 +82,36 @@ const Curriculum = () => {
           ))}
         </ol>
       </section>
-      <section className='skills'>
-        <div className='title-wrapper'>
-          <div className='icon-box'>
-            <i className='fa-solid fa-layer-group'></i>
-          </div>
-          <h3 className='h3'>{t('curriculum-subtitle-3')}</h3>
-        </div>
-
-        <div className='skills-text'>
-          <p>{t('curriculum-skills-text-1')}</p>
-        </div>
-
-        <ul className='skills-list'>
-          {Skills.map((skill) => (
-            <a
-              href={skill.url}
-              target='_blank'
-              rel='noopener noreferrer'
-              onClick={(e) => e.stopPropagation()}
-              key={skill.id}
-              className='skills-item'
-            >
-              <div className='card-link'>
-                <i className='fa-solid fa-arrow-up-right-from-square'></i>
-              </div>
-              <div className='skills-icon-box'>
-                <img src={skill.logo} alt={`${skill.title} logo`} width={40} height={'auto'} loading='lazy' />
-              </div>
-              <div className='skills-content-box'>
-                <h4 className='h4 skills-item-title'>{skill.title}</h4>
-                <p className='skills-item-text'>{skill.description}</p>
-              </div>
-            </a>
-          ))}
-        </ul>
-      </section>
-
-      <section className='technologies'>
-        <div className='title-wrapper'>
-          <div className='icon-box'>
-            <i className='fa-solid fa-cubes-stacked'></i>
-          </div>
-          <h3 className='h3'>{t('curriculum-subtitle-5')}</h3>
-        </div>
-
-        <ul className='technologies-list has-scrollbar'>
-          {Technologies.map((tech) => (
-            <a
-              href={tech.url}
-              target='_blank'
-              rel='noopener noreferrer'
-              onClick={(e) => e.stopPropagation()}
-              key={tech.id}
-              className='technologies-item'
-            >
-              <img src={tech.logo} alt={`${tech.title} logo`} title={tech.title} />
-            </a>
-          ))}
-        </ul>
-      </section>
 
       <section className='timeline' style={{ marginTop: '40px' }}>
         <div className='title-wrapper'>
           <div className='icon-box'>
             <i className='fa-solid fa-laptop-code'></i>
           </div>
-          <h3 className='h3'>{t('curriculum-subtitle-6')}</h3>
+          <h3 className='h3'>{t('curriculum-subtitle-3')}</h3>
         </div>
 
         <ol className='timeline-list'>
           {Courses.map((course) => (
-            <li key={course.id} className='timeline-item'>
               <a
                 href={course.url}
                 target='_blank'
                 rel='noopener noreferrer'
                 onClick={(e) => e.stopPropagation()}
-                className='timeline-link'
+                key={course.id}
+                className='timeline-item'
               >
-                <div className='timeline-title'>
-                  <img src={course.image} alt={course.provider} title={course.provider} />
-                  <span>{course.date}</span>
-                  <div className='dot'></div>
-                  <h4 className='h4 timeline-item-title'>{course.title}</h4>
-                  <span className='timeline-item-subtitle'>by {course.provider}</span>
+                <div className='timeline-title timeline-title-course'>
+                  <div className='course-row-1'>
+                    <img src={course.image} alt={course.provider} title={course.provider} />
+                    <span className='course-date'>{course.date}</span>
+                  </div>
+                  <div className='course-row-2'>
+                    <h4 className='h4 timeline-item-title'>{course.title}</h4>
+                    <span className='timeline-item-subtitle'>by {course.provider}</span>
+                  </div>
                 </div>
               </a>
-            </li>
           ))}
         </ol>
       </section>

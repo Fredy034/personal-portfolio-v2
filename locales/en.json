@@ -1,9 +1,10 @@
 {
   "navbar-option-1": "About",
   "navbar-option-2": "Curriculum",
-  "navbar-option-3": "Portfolio",
-  "navbar-option-4": "Blog",
-  "navbar-option-5": "Contact",
+  "navbar-option-3": "Skills",
+  "navbar-option-4": "Portfolio",
+  "navbar-option-5": "Blog",
+  "navbar-option-6": "Contact",
 
   "options-language-1": "English",
   "options-language-2": "Spanish",
@@ -21,15 +22,16 @@
   "about-subtitle-2": "Testimonials",
   "about-subtitle-3": "Clients",
 
+  "skills-title": "Skills",
+  "skills-text-1": "In my journey as a frontend developer, I have specialized in a set of modern technologies that allow me to create interactive, accessible, and maintainable experiences. Through my knowledge of languages, frameworks, and design and deployment tools, I can take an idea from concept to production with high quality and performance. These are some of the technologies I work with:",
+  "skills-subtitle-1": "Other Technologies",
+
   "curriculum-title": "Curriculum",
   "curriculum-subtitle-1": "Education",
   "curriculum-subtitle-2": "Experience",
-  "curriculum-subtitle-3": "My Skills",
+  "curriculum-subtitle-3": "Courses and Certifications",
   "curriculum-subtitle-4": "View Full Résumé",
   "curriculum-no-experience": "Currently, I do not have professional experience in the field of computer engineering. However, I am developing various personal and university projects that allow me to advance and improve my skills in this area. I am committed to continuous learning and apply my theoretical knowledge in practical situations to acquire relevant skills and be better prepared for future professional challenges.",
-  "curriculum-skills-text-1": "In my journey as a frontend developer, I have specialized in a set of modern technologies that allow me to create interactive, accessible, and maintainable experiences. Through my knowledge of languages, frameworks, and design and deployment tools, I can take an idea from concept to production with high quality and performance. These are some of the technologies I work with:",
-  "curriculum-subtitle-5": "Other Technologies",
-  "curriculum-subtitle-6": "Courses and Certifications",
 
   "portfolio-title": "Portfolio",
   "portfolio-filter-1": "All",
