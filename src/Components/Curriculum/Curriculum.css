@@ -3,10 +3,13 @@
 }
 
 /* education and experience  */
-.timeline {
+.timeline,
+.skills {
   margin-bottom: 30px;
 }
-.timeline .title-wrapper {
+.timeline .title-wrapper,
+.skills .title-wrapper,
+.technologies .title-wrapper {
   display: flex;
   align-items: center;
   gap: 15px;
@@ -33,6 +36,14 @@
   align-items: center;
   gap: 15px;
   margin-bottom: 7px;
+}
+.timeline-title > img {
+  background: var(--border-gradient-onyx);
+  width: auto;
+  height: 32px;
+  padding: 5px;
+  object-fit: contain;
+  border-radius: 6px;
 }
 .timeline-item-title {
   font-size: var(--fs-6);
@@ -100,40 +111,129 @@
 }
 
 /* skils */
-.skills-title {
-  margin-bottom: 20px;
+.skills-text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+  margin-block: -15px 25px;
 }
 .skills-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.skills-item {
+  position: relative;
+  background: var(--border-gradient-onyx);
   padding: 20px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-2);
+  z-index: 1;
+  transition: background-color 0.3s;
 }
-.skills-item:not(:last-child) {
-  margin-bottom: 15px;
+.skills-item::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
 }
-.skill .title-wrapper {
+.card-link i {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 12px;
+  right: 12px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 8px;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--white-1);
+  border: 1px solid var(--white-1);
+  background: transparent;
+  border-radius: 50%;
+  transition:  color 0.3s, border-color 0.3s, background 0.3s, opacity 0.3s;
+  opacity: 0.6;
+  z-index: 2;
 }
-.skill .title-wrapper span {
+.skills-icon-box {
+  margin-bottom: 10px;
+}
+.skills-icon-box img {
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  filter: grayscale(100%);
+  transition: border-color 0.3s, filter 0.3s;
+}
+.skills-content-box {
+  text-align: center;
+}
+.skills-item-title {
+  margin-bottom: 7px;
+}
+.skills-item-text {
   color: var(--light-gray);
-  font-size: var(--fs-7);
-  font-weight: var(--fw-300);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-3);
+  line-height: 1.6;
 }
-.skill-progress-bg {
-  background: var(--jet);
-  width: 100%;
-  height: 9px;
-  border-radius: 10px;
+.skills-item:hover {
+  background-color: var(--vegas-gold);
 }
-.skill-progress-fill {
-  background: var(--text-gradient-yellow);
-  height: 100%;
-  border-radius: inherit;
+.skills-item:hover .card-link i {
+  background: var(--white-1);
+  color: var(--onyx);
+  opacity: 1;
+}
+.skills-item:hover .skills-icon-box img {
+  filter: none;
 }
 .full-resume {
   margin-top: 20px;
   padding: 0;
+}
+
+/* #technologies */
+.technologies .title-wrapper {
+  margin-bottom: 0;
+}
+.technologies-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+  margin: 0 -25px;
+  padding: 25px;
+  padding-bottom: 25px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: 25px;
+}
+.technologies-item {
+  min-width: 50%;
+  scroll-snap-align: start;
+}
+.technologies-item img {
+  display: block;
+  height: 60px;
+  width: 100%;
+  filter: grayscale(1);
+  transition: var(--transition-1);
+}
+.technologies-item img:hover {
+  filter: grayscale(0);
+}
+
+/* responsive larger than 450px screen */
+@media (min-width: 450px) {
+  .technologies-item {
+    min-width: calc(33.33% - 10px);
+  }
 }
 
 /* responsive larger than 580px screen */
@@ -149,8 +249,44 @@
     width: 8px;
     left: -43px;
   }
-  .skills-item:not(:last-child) {
-    margin-bottom: 25px;
+
+  /* skills */
+  .skills-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 30px;
+  }
+  .skills-icon-box {
+    margin-bottom: 0;
+    margin-top: 5px;
+  }
+  .skills-content-box {
+    text-align: left;
+  }
+
+  /* technologies */
+  .technologies-list {
+    margin: 0 -30px;
+    padding: 45px;
+    scroll-padding-inline: 45px;
+  }
+  .technologies-item {
+    min-width: calc(33.33% - 35px);
+  }
+}
+
+@media (min-width: 1024px) {
+  /* skills */
+  .skills-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 25px;
+  }
+  
+  /* technologies */
+  .technologies-item {
+    min-width: calc(25% - 38px);
   }
 }
 

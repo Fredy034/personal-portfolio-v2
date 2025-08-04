@@ -159,7 +159,7 @@ main {
 
   /* #MAIN */
   main {
-    margin-top: 60px;
+    margin-top: 50px;
     margin-bottom: 100px;
   }
 }
@@ -218,7 +218,7 @@ main {
   }
   .aside-container {
     position: sticky;
-    top: 60px;
+    top: 50px;
     margin-bottom: 0;
     min-width: 320px;
     max-height: max-content;

@@ -127,7 +127,14 @@ const Portfolio = () => {
         <ul className='project-list'>
           {filteredProjects.map((project, index) => (
             <li key={index} className={`project-item ${project.active ? 'active' : ''}`}>
-              <div className='project-item-container' onClick={() => window.open(project.demo)} target='_blank'>
+              <div
+                className='project-item-container'
+                onClick={() => {
+                  if (window.innerWidth <= 768) {
+                    window.open(project.demo);
+                  }
+                }}
+              >
                 <figure className='project-img'>
                   <div className='project-item-icon-container'>
                     {project.demo !== '' ? (

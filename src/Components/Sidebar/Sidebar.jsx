@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import './Sidebar.css';
 import { ContactData, SocialData } from './sidebarData';
+import PropTypes from 'prop-types';
 
 const Sidebar = ({ isAviable = false }) => {
   const { t, i18n } = useTranslation();
@@ -22,6 +23,11 @@ const Sidebar = ({ isAviable = false }) => {
   const handleToggle = () => {
     setIsActive(!isActive);
   };
+
+  useEffect(() => {
+    const img = new window.Image();
+    img.src = './images/avatar/my-avatar-blink.webp';
+  }, []);
 
   const iconContacts = isActive ? 'fa-solid fa-chevron-up' : 'fa-solid fa-chevron-down';
   const textContacts = isActive ? t('sidebar-option-1') : t('sidebar-option-2');
@@ -104,6 +110,9 @@ const Sidebar = ({ isAviable = false }) => {
       </div>
     </aside>
   );
+};
+Sidebar.propTypes = {
+  isAviable: PropTypes.bool
 };
 
 export default Sidebar;

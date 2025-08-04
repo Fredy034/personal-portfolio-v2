@@ -1,16 +1,15 @@
 :root {
-  /* colors dark theme */
+  /*-----------------------------------*\
+  * #COLORS DARK THEME
+  \*-----------------------------------*/
 
   /* gradient */
   --dark-bg-gradient-onyx: linear-gradient(to bottom right, hsl(240, 1%, 25%) 3%, hsl(0, 0%, 19%) 97%);
-  --dark-bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 1%, 18%, 0.251) 0%, hsla(240, 2%, 11%, 0) 100%),
-    hsl(240, 2%, 13%);
+  --dark-bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 1%, 18%, 0.251) 0%, hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
   --dark-bg-gradient-yellow-1: linear-gradient(to bottom right, hsl(45, 100%, 71%) 0%, hsla(36, 100%, 69%, 0) 50%);
-  --dark-bg-gradient-yellow-2: linear-gradient(135deg, hsla(45, 100%, 71%, 0.251) 0%, hsla(35, 100%, 68%, 0) 59.86%),
-    hsl(240, 2%, 13%);
+  --dark-bg-gradient-yellow-2: linear-gradient(135deg, hsla(45, 100%, 71%, 0.251) 0%, hsla(35, 100%, 68%, 0) 59.86%), hsl(240, 2%, 13%);
   --dark-border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
   --dark-text-gradient-yellow: linear-gradient(to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%));
-
   /* solid */
   --dark-jet: hsl(0, 0%, 22%);
   --dark-onyx: hsl(240, 1%, 17%);
@@ -27,18 +26,17 @@
   --dark-navbar: hsla(240, 1%, 17%, 0.75);
   --dark-green: rgb(163 230 53);
 
-  /* colors light theme */
+  /*-----------------------------------*\
+  * #COLORS LIGHT THEME
+  \*-----------------------------------*/
 
   /* gradient */
   --light-bg-gradient-onyx: linear-gradient(to bottom right, hsl(240, 1%, 75%) 3%, hsl(0, 0%, 81%) 97%);
-  --light-bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 1%, 88%, 0.251) 0%, hsla(240, 2%, 91%, 0) 100%),
-    hsl(240, 2%, 87%);
+  --light-bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 1%, 88%, 0.251) 0%, hsla(240, 2%, 91%, 0) 100%), hsl(240, 2%, 87%);
   --light-bg-gradient-yellow-1: linear-gradient(to bottom right, hsl(45, 100%, 51%) 0%, hsla(36, 100%, 69%, 0) 50%);
-  --light-bg-gradient-yellow-2: linear-gradient(135deg, hsla(45, 100%, 51%, 0.251) 0%, hsla(35, 100%, 68%, 0) 59.86%),
-    hsl(240, 2%, 87%);
+  --light-bg-gradient-yellow-2: linear-gradient(135deg, hsla(45, 100%, 51%, 0.251) 0%, hsla(35, 100%, 68%, 0) 59.86%), hsl(240, 2%, 87%);
   --light-border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 75%) 0%, hsla(0, 0%, 75%, 0) 50%);
   --light-text-gradient-yellow: linear-gradient(to right, hsl(45, 100%, 42%), hsl(35, 100%, 38%));
-
   /* solid */
   --light-jet: hsl(0, 0%, 82%);
   --light-onyx: hsl(240, 1%, 77%);
@@ -55,11 +53,12 @@
   --light-navbar: hsla(240, 1%, 85%, 0.75);
   --light-green: rgb(94, 135, 28);
 
-  /* typography */
+  /*-----------------------------------*\
+  * #TYPOGRAPHY
+  \*-----------------------------------*/
 
   /* font-family */
   --ff-poppins: 'Poppins', sans-serif;
-
   /* font-size */
   --fs-1: 24px;
   --fs-2: 18px;
@@ -69,17 +68,19 @@
   --fs-6: 14px;
   --fs-7: 13px;
   --fs-8: 11px;
-
   /* font-weight */
   --fw-300: 300;
   --fw-400: 400;
   --fw-500: 500;
   --fw-600: 600;
-
   /* line-height */
   --lh-1: 1.5;
   --lh-2: 1.6;
   --lh-3: 1.7;
+
+  /*-----------------------------------*\
+  * #SHADOWS
+  \*-----------------------------------*/
 
   /* shadow */
   --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
@@ -88,10 +89,15 @@
   --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
   --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
 
+  /*-----------------------------------*\
+  * #TRANSITION
+  \*-----------------------------------*/
+
   /* transition */
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease-in-out;
 }
+
 [data-theme='dark'] {
   color-scheme: dark;
 
@@ -119,6 +125,7 @@
   --navbar-color: var(--dark-navbar);
   --green: var(--dark-green);
 }
+
 [data-theme='light'] {
   color-scheme: light;
 

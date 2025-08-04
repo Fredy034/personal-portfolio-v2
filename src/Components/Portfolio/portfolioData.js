@@ -164,7 +164,7 @@ const ArchiveData = [
     image: '',
   },
   {
-    demo: 'https://fredy034.neocities.org/Introduccion_JS/taller%2014/index.html',
+    demo: 'https://fredy034.neocities.org/Clase_JS/',
     github: '',
     figma: '',
     title: {
