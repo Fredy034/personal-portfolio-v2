@@ -89,6 +89,7 @@ const Sidebar = ({ isAvailable = false }) => {
             <li key={item.id} className='social-item'>
               <a
                 href={item.link}
+                target='_blank'
                 className='social-link'
                 aria-label={`Contact me through ${item.alt}`}
                 title={`View ${item.alt}`}

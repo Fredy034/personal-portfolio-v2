@@ -5,7 +5,7 @@ const PageContext = createContext();
 
 const getPageFromUrl = () => {
   const params = new URLSearchParams(window.location.search);
-  return params.get('p') || 'about';
+  return params.get('tab') || 'about';
 };
 
 export const PageProvider = ({ children }) => {
@@ -13,8 +13,8 @@ export const PageProvider = ({ children }) => {
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    if (activePage !== params.get('p')) {
-      params.set('p', activePage);
+    if (activePage !== params.get('tab')) {
+      params.set('tab', activePage);
       const newUrl = `${window.location.pathname}?${params.toString()}`;
       window.history.replaceState({}, '', newUrl);
     }
