@@ -7,13 +7,14 @@ const EducationData = [
     },
     school: 'Institución Universitaria de Envigado (IUE)',
     date: {
-      en: '02/2021 - Present',
-      es: '02/2021 - Actualidad',
+      en: '02/2021 - 08/2025',
+      es: '02/2021 - 08/2025',
     },
     description: {
       en: 'I am currently working on obtaining my undergraduate degree, which will help me improve the skills I already obtained while doing my technical degree and further develop my experience.',
       es: 'Actualmente estoy trabajando en obtener mi título de pregrado, lo que me ayudará a mejorar las habilidades que ya obtuve mientras hacía mi técnica y desarrollar aún más mi experiencia.',
     },
+    professionalCard: 'https://tramites.copnia.gov.co/Copnia_Microsite/CertificateOfGoodStanding/WaterMarkmethod?CertificateNumber=011246-0790641%20ANT',
   },
   {
     id: 2,

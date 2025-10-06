@@ -29,30 +29,32 @@ const Curriculum = () => {
           {Experience.length === 0 ? (
             <p className='no-experience'>{t('curriculum-no-experience')}</p>
           ) : (
-            Experience.slice().reverse().map((experience) => (
-              <li key={experience.id} className='timeline-item'>
-                <div className='timeline-title'>
-                  <h4 className='h4 timeline-item-title'>{experience.title}</h4>
-                  <span className='dot'></span>
-                  <span className='timeline-item-subtitle'>{experience.company}</span>
-                </div>
-                <div className='timeline-year'>
-                  <i className='fa-regular fa-calendar-days'></i>
-                  <span>{experience.date}</span>
-                </div>
-                <div className='timeline-text'>
-                  {experience.description.split('\n').map((line, index) =>
-                    index === 0 ? (
-                      <p key={index}>{line.trim()}</p>
-                    ) : (
-                      <ul key={index} className='timeline-text-list'>
-                        <li className='timeline-text-list-item'>{line.trim()}</li>
-                      </ul>
-                    )
-                  )}
-                </div>
-              </li>
-            ))
+            Experience.slice()
+              .reverse()
+              .map((experience) => (
+                <li key={experience.id} className='timeline-item'>
+                  <div className='timeline-title'>
+                    <h4 className='h4 timeline-item-title'>{experience.title}</h4>
+                    <span className='dot'></span>
+                    <span className='timeline-item-subtitle'>{experience.company}</span>
+                  </div>
+                  <div className='timeline-year'>
+                    <i className='fa-regular fa-calendar-days'></i>
+                    <span>{experience.date}</span>
+                  </div>
+                  <div className='timeline-text'>
+                    {experience.description.split('\n').map((line, index) =>
+                      index === 0 ? (
+                        <p key={index}>{line.trim()}</p>
+                      ) : (
+                        <ul key={index} className='timeline-text-list'>
+                          <li className='timeline-text-list-item'>{line.trim()}</li>
+                        </ul>
+                      )
+                    )}
+                  </div>
+                </li>
+              ))
           )}
         </ol>
       </section>
@@ -78,6 +80,20 @@ const Curriculum = () => {
                 <span>{education.date}</span>
               </div>
               <p className='timeline-text'>{education.description}</p>
+              {education.professionalCard && (
+                <>
+                  <p className='timeline-text professional-card'>{t('curriculum-professional-card')}: </p>
+                  <a
+                    href={education.professionalCard}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    onClick={(e) => e.stopPropagation()}
+                    className='professional-card-link'
+                  >
+                    011246-0790641 ANT
+                  </a>
+                </>
+              )}
             </li>
           ))}
         </ol>
@@ -93,25 +109,25 @@ const Curriculum = () => {
 
         <ol className='timeline-list'>
           {Courses.map((course) => (
-              <a
-                href={course.url}
-                target='_blank'
-                rel='noopener noreferrer'
-                onClick={(e) => e.stopPropagation()}
-                key={course.id}
-                className='timeline-item'
-              >
-                <div className='timeline-title timeline-title-course'>
-                  <div className='course-row-1'>
-                    <img src={course.image} alt={course.provider} title={course.provider} />
-                    <span className='course-date'>{course.date}</span>
-                  </div>
-                  <div className='course-row-2'>
-                    <h4 className='h4 timeline-item-title'>{course.title}</h4>
-                    <span className='timeline-item-subtitle'>by {course.provider}</span>
-                  </div>
+            <a
+              href={course.url}
+              target='_blank'
+              rel='noopener noreferrer'
+              onClick={(e) => e.stopPropagation()}
+              key={course.id}
+              className='timeline-item'
+            >
+              <div className='timeline-title timeline-title-course'>
+                <div className='course-row-1'>
+                  <img src={course.image} alt={course.provider} title={course.provider} />
+                  <span className='course-date'>{course.date}</span>
                 </div>
-              </a>
+                <div className='course-row-2'>
+                  <h4 className='h4 timeline-item-title'>{course.title}</h4>
+                  <span className='timeline-item-subtitle'>by {course.provider}</span>
+                </div>
+              </div>
+            </a>
           ))}
         </ol>
       </section>

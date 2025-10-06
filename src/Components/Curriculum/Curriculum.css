@@ -144,6 +144,22 @@
   font-weight: var(--fw-300);
   line-height: 1.6;
 }
+.professional-card {
+  margin-top: 8px;
+  margin-right: 8px;
+  color: var(--light-gray);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-300);
+  display: inline-block;
+}
+.professional-card-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--vegas-gold);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-400);
+  text-decoration: none;
+}
 .timeline-text-list {
   margin-block: 5px;
   margin-left: 20px;
