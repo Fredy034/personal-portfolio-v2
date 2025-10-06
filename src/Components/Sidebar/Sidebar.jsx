@@ -5,7 +5,9 @@ import { translateContacts } from '../../helpers/translate';
 import './Sidebar.css';
 import { ContactData, SocialData } from './sidebarData';
 
-const Sidebar = ({ isAvailable = false }) => {
+// Manejar tres estados para la disponibilidad: free, busy, limited
+// Cambiar el color del punto de disponibilidad según el estado
+const Sidebar = ({ isAvailable = 'busy' }) => {
   const { t, i18n } = useTranslation();
   const [isActive, setIsActive] = useState(false);
 
@@ -49,9 +51,9 @@ const Sidebar = ({ isAvailable = false }) => {
           </h1>
           <p className='title'>{t('sidebar-title')}</p>
           <div className='availability-container'>
-            <span className={`availability-status ${isAvailable ? '' : 'offline'}`}></span>
+            <span className={`availability-status ${isAvailable === 'free' ? '' : isAvailable === 'busy' ? 'offline' : 'limited'}`}></span>
             <span className='availability-title'>
-              {isAvailable ? t('sidebar-aviability-1') : t('sidebar-aviability-2')}
+              {isAvailable === 'free' ? t('sidebar-aviability-1') : isAvailable === 'busy' ? t('sidebar-aviability-2') : t('sidebar-aviability-3')}
             </span>
           </div>
         </div>

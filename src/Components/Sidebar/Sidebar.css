@@ -79,25 +79,18 @@
   animation: 1.5s ease 0s infinite normal none running twinkle;
   box-shadow: 0 0 0 0 rgb(77, 177, 87);
 }
-@keyframes twinkle {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(77, 177, 87, 0.9);
-  }
-  50% {
-    transform: scale(1);
-    box-shadow: 0 0 0 4px rgba(77, 177, 87, 0);
-  }
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(77, 177, 87, 0);
-  }
-}
 .availability-status.offline {
   background: var(--bittersweet-shimmer);
 }
 .availability-status.offline::after {
   animation: none;
+}
+.availability-status.limited {
+  background: var(--orange-yellow-crayola);
+}
+.availability-status.limited::after {
+  animation: 3s ease 0s infinite normal none running twinkle-limited;
+  box-shadow: 0 0 0 0 var(--orange-yellow-crayola);
 }
 .availability-container .availability-title {
   color: var(--white-1);
@@ -177,6 +170,36 @@
 .social-item .social-link {
   color: var(--light-gray-70);
   font-size: 15px;
+}
+
+/* Animations */
+@keyframes twinkle {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(77, 177, 87, 0.9);
+  }
+  50% {
+    transform: scale(1);
+    box-shadow: 0 0 0 4px rgba(77, 177, 87, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(77, 177, 87, 0);
+  }
+}
+@keyframes twinkle-limited {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.9);
+  }
+  50% {
+    transform: scale(1);
+    box-shadow: 0 0 0 4px rgba(255, 204, 0, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 204, 0, 0);
+  }
 }
 
 /* hover effect */

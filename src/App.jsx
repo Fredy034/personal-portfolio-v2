@@ -14,7 +14,7 @@ function App() {
   return (
     <main>
       <div className='aside-container'>
-        <Sidebar isAvailable />
+        <Sidebar isAvailable='limited' />
         <Options />
       </div>
       <PageProvider>
