@@ -29,7 +29,7 @@ const Curriculum = () => {
           {Experience.length === 0 ? (
             <p className='no-experience'>{t('curriculum-no-experience')}</p>
           ) : (
-            Experience.map((experience) => (
+            Experience.slice().reverse().map((experience) => (
               <li key={experience.id} className='timeline-item'>
                 <div className='timeline-title'>
                   <h4 className='h4 timeline-item-title'>{experience.title}</h4>

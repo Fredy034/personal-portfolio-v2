@@ -65,6 +65,30 @@ const ExperienceData = [
       en: 'Supported the IT department in various strategic initiatives: \nParticipated in the development of the internal “IT Needs Managment” application (Angular, .NET Core, SQL Server, Azure DevOps), focusing on feature implementation, production deployment, and end-user training. \nContributed to “DSD Master Data”, implementing Azure B2C with Angular and developing both frontend and backend in .NET Core, integrated with SQL Server and SAP HANA. \nAssisted in migrating the “Physical Inventory Optimization” project from Angular v14 to v19, ensuring compatibility and stability. \nTook part in Phase 1 of “At Your Service” (Angular 19, .NET Core 8, SQL Server), working under Scrum methodology and implementing new features and Azure B2C integrations. \nProvided support for RFI and RFP processes to evaluate and select technology vendors.',
       es: 'Apoyé al área de TI en diversas iniciativas estratégicas: \nParticipé en el desarrollo de la aplicación interna “Gestión de Necesidades TI” (Angular, .NET Core, SQL Server, Azure DevOps), con énfasis en la implementación de funcionalidades, el despliegue en entorno productivo y la capacitación de usuarios.\nContribuí en “Maestras DSD”, implementando Azure B2C con Angular y desarrollando frontend y backend en .NET Core, integrados con SQL Server y SAP HANA. \nApoyé en la migración del proyecto “Optimización de Toma de Inventario Físico” de Angular v14 a v19, garantizando compatibilidad y estabilidad. \nParticipé en la Fase 1 de “A tu Servicio” (Angular 19, .NET Core 8, SQL Server), trabajando bajo la metodología Scrum e implementando funcionalidades e integraciones con Azure B2C. \nBrindé soporte en los procesos de RFI y RFP para la evaluación y selección de proveedores tecnológicos.',
     },
+    skills: {
+      en: ['Angular', '.NET Core', 'Microsoft SQL Server', 'Azure DevOps', 'Time Management', 'SQL', 'Scrum'],
+      es: ['Angular', '.NET Core', 'Microsoft SQL Server', 'Azure DevOps', 'Gestión del Tiempo', 'SQL', 'Scrum'],
+    },
+  },
+  {
+    id: 2,
+    title: {
+      en: 'Software Analyst',
+      es: 'Analista de Software',
+    },
+    company: 'Compuhora S.A.S.',
+    date: {
+      en: '08/2025 - 10/2025',
+      es: '08/2025 - 10/2025',
+    },
+    description: {
+      en: 'Responsibilities and achievements:\nDeveloped an API with Python for text embeddings processing.\nDesigned and developed a remote desktop control application prototype using Node.js and React.js.\nCreated an AI-powered ChatBot prototype capable of handling context through a file manager and answering questions based on that context or the web, using .NET Core, JavaScript, HTML, CSS, and Swagger.',
+      es: 'Responsabilidades y logros:\nDesarrollo de una API con Python para el procesamiento de text embeddings.\nDiseño y desarrollo de un prototipo de aplicación de control de escritorio remoto utilizando Node.js y React.js.\nCreación de un prototipo de ChatBot con inteligencia artificial, capaz de manejar contexto mediante un gestor de archivos y responder preguntas basadas en dicho contexto o en la web, empleando .NET Core, JavaScript, HTML, CSS y Swagger.',
+    },
+    skills: {
+      en: ['Python', 'Node.js', 'React.js', '.NET Core', 'JavaScript', 'HTML', 'CSS', 'Swagger', 'APIs', 'Artificial Intelligence'],
+      es: ['Python', 'Node.js', 'React.js', '.NET Core', 'JavaScript', 'HTML', 'CSS', 'Swagger', 'APIs', 'Inteligencia Artificial'],
+    },
   },
 ];
 
