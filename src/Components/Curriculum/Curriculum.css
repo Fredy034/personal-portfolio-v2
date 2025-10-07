@@ -102,16 +102,21 @@
   font-size: var(--fs-8);
   font-weight: var(--fw-300);
 }
-.timeline-year {
+.timeline-year,
+.timeline-place {
   display: flex;
+  align-items: center;
   flex-direction: row;
-  gap: 10px;
-  margin-bottom: 5px;
   justify-content: flex-start;
   align-items: center;
+  gap: 6px;
+  font-size: var(--fs-7);
 }
 .timeline-year i {
   font-size: 12px;
+}
+.timeline-place {
+  margin-bottom: 6px;
 }
 .timeline-list span,
 .timeline-list i {
@@ -166,6 +171,19 @@
 }
 .timeline-text-list-item {
   list-style-type: circle;
+}
+
+.skills-list-experience {
+  margin-top: 12px;
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+  display: inline-block;
+}
+.skills-list-experience strong {
+  font-weight: var(--fw-600);
+  margin-bottom: 4px;
 }
 
 /* responsive larger than 580px screen */

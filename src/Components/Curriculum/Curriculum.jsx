@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { translateCourses, translateEducation } from '../../helpers/translate';
+import { translateCourses, translateEducation, translateExperience } from '../../helpers/translate';
 import { usePageContext } from '../PageContext';
 import './Curriculum.css';
 import { CoursesData, EducationData, ExperienceData } from './curriculumData';
@@ -9,7 +9,7 @@ const Curriculum = () => {
   const { activePage } = usePageContext();
 
   const Education = translateEducation(EducationData, i18n.language);
-  const Experience = translateEducation(ExperienceData, i18n.language);
+  const Experience = translateExperience(ExperienceData, i18n.language);
   const Courses = translateCourses(CoursesData, i18n.language);
 
   return (
@@ -42,6 +42,11 @@ const Curriculum = () => {
                     <i className='fa-regular fa-calendar-days'></i>
                     <span>{experience.date}</span>
                   </div>
+                  {experience.place && (
+                    <div className='timeline-place'>
+                      <span>{experience.place} - {experience.modality}</span>
+                    </div>
+                  )}
                   <div className='timeline-text'>
                     {experience.description.split('\n').map((line, index) =>
                       index === 0 ? (
@@ -53,6 +58,12 @@ const Curriculum = () => {
                       )
                     )}
                   </div>
+                  {/* Aptitudes */}
+                  {experience.skills && experience.skills.length > 0 && (
+                    <p className='skills-list-experience'>
+                      <strong>{t('curriculum-skills')}:</strong> {experience.skills.join(', ')}
+                    </p>
+                  )}
                 </li>
               ))
           )}

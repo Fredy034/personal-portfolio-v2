@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { translateService, translateTestimonials } from '../../helpers/translate';
 import { usePageContext } from '../PageContext';
 import './About.css';
-import { ServicesData, TestimonialsData } from './aboutData';
+import { ServicesData, TestimonialsData, ClientsData } from './aboutData';
 
 const About = () => {
   const { t, i18n } = useTranslation();

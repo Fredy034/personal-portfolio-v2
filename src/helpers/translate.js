@@ -19,6 +19,8 @@ export const translateProjects = (data, language) => translateFields(data, langu
 
 export const translateEducation = (data, language) => translateFields(data, language, ['title', 'date', 'description']);
 
+export const translateExperience = (data, language) => translateFields(data, language, ['title', 'date', 'modality', 'description', 'skills']);
+
 export const translateSkills = (data, language) => translateFields(data, language, ['description']);
 
 export const translateCourses = (data, language) => translateFields(data, language, ['title', 'date']);
