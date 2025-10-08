@@ -28,3 +28,16 @@ export const translateCourses = (data, language) => translateFields(data, langua
 export const translateService = (data, language) => translateFields(data, language, ['alt', 'title', 'text']);
 
 export const translateTestimonials = (data, language) => translateFields(data, language, ['text']);
+
+export const translateResources = (data, language) => {
+  return data.map((item) => {
+    const translated = { ...item };
+    translated.title = item.title[language];
+    translated.description = item.description[language];
+    translated.links = item.links.map((link) => ({
+      ...link,
+      description: link.description[language],
+    }));
+    return translated;
+  });
+};

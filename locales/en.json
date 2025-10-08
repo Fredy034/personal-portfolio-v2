@@ -3,8 +3,9 @@
   "navbar-option-2": "Curriculum",
   "navbar-option-3": "Skills",
   "navbar-option-4": "Portfolio",
-  "navbar-option-5": "Blog",
-  "navbar-option-6": "Contact",
+  "navbar-option-5": "Resources",
+  "navbar-option-6": "Blog",
+  "navbar-option-7": "Contact",
 
   "options-language-1": "English",
   "options-language-2": "Spanish",
@@ -55,6 +56,9 @@
   "portfolio-click-title-1": "View Demo",
   "portfolio-click-title-2": "View Code",
   "portfolio-click-title-3": "View Figma",
+
+  "resources-title": "Resources",
+  "resources-text-1": "Here you will find a collection of useful resources that I have selected to help you in your learning and professional development. These resources include tutorials, articles, tools, and libraries that I consider valuable for any web developer. My goal is to share knowledge and facilitate access to materials that can enrich your experience in the world of web development. Feel free to explore and use these links to enhance your skills and knowledge.",
 
   "contact-title": "Contact",
   "contact-subtitle-1": "Contact Form",

@@ -5,7 +5,7 @@ const Blog = () => {
   const { activePage } = usePageContext();
 
   return (
-    <article className={`blog ${activePage === 'blog' ? 'active' : ''}`}>
+    <article className={`blog${activePage === 'blog' ? ' active' : ''}`}>
       <header>
         <h2 className="h2 article-title">Blog</h2>
       </header>

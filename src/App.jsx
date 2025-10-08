@@ -7,6 +7,7 @@ import Navbar from './Components/Navbar/Navbar';
 import Options from './Components/Options/Options';
 import { PageProvider } from './Components/PageContext';
 import Porfolio from './Components/Portfolio/Portfolio';
+import Resources from './Components/Resources/Resources';
 import Sidebar from './Components/Sidebar/Sidebar';
 import Skills from './Components/Skills/Skills';
 
@@ -24,8 +25,9 @@ function App() {
           <Curriculum />
           <Skills />
           <Porfolio />
+          {/* <Resources />
           <Blog />
-          <Contact />
+          <Contact /> */}
         </div>
       </PageProvider>
     </main>

@@ -3,8 +3,9 @@
   "navbar-option-2": "Currículum",
   "navbar-option-3": "Habilidades",
   "navbar-option-4": "Portafolio",
-  "navbar-option-5": "Blog",
-  "navbar-option-6": "Contacto",
+  "navbar-option-5": "Recursos",
+  "navbar-option-6": "Blog",
+  "navbar-option-7": "Contacto",
 
   "options-language-1": "Inglés",
   "options-language-2": "Español",
@@ -55,6 +56,9 @@
   "portfolio-click-title-1": "Ver proyecto",
   "portfolio-click-title-2": "Ver código fuente",
   "portfolio-click-title-3": "Ver Figma",
+
+  "resources-title": "Recursos",
+  "resources-text-1": "Aquí encontrarás una colección de recursos útiles que he seleccionado para ayudarte en tu aprendizaje y desarrollo profesional. Estos recursos incluyen tutoriales, artículos, herramientas y bibliotecas que considero valiosos para cualquier desarrollador web. Mi objetivo es compartir conocimientos y facilitar el acceso a materiales que puedan enriquecer tu experiencia en el mundo del desarrollo web. No dudes en explorar y utilizar estos enlaces para mejorar tus habilidades y conocimientos.",
 
   "contact-title": "Contacto",
   "contact-subtitle-1": "Formulario de Contacto",

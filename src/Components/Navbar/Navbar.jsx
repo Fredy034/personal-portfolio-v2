@@ -11,8 +11,9 @@ const Navbar = () => {
     { id: 'curriculum', label: t('navbar-option-2') },
     { id: 'skills', label: t('navbar-option-3') },
     { id: 'portfolio', label: t('navbar-option-4') },
-    // { id: 'blog', label: t('navbar-option-5') },
-    // { id: 'contact', label: t('navbar-option-6') },
+    // { id: 'resources', label: t('navbar-option-5') },
+    // { id: 'blog', label: t('navbar-option-6') },
+    // { id: 'contact', label: t('navbar-option-7') },
   ];
 
   const handleNavLinkClick = (page) => {
