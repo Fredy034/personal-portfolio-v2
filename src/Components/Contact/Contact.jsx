@@ -32,7 +32,7 @@ const Contact = () => {
   }, [formData]);
 
   return (
-    <article className={`contact ${activePage === 'contact' ? 'active' : ''}`}>
+    <article className={`contact${activePage === 'contact' ? ' active' : ''}`}>
       <header>
         <h2 className='h2 article-title'>{t('contact-title')}</h2>
       </header>

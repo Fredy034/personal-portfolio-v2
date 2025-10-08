@@ -33,7 +33,7 @@ const Skills = () => {
   const Technologies = OtherTechnologiesData;
 
   return (
-    <article className={`resume ${activePage === 'skills' ? 'active' : ''}`}>
+    <article className={`skills${activePage === 'skills' ? ' active' : ''}`}>
       <header>
         <h2 className='h2 article-title'>{t('skills-title')}</h2>
       </header>

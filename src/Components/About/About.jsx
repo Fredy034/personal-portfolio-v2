@@ -25,7 +25,7 @@ const About = () => {
   };
 
   return (
-    <article className={`about ${activePage === 'about' ? 'active' : ''}`}>
+    <article className={`about${activePage === 'about' ? ' active' : ''}`}>
       <header>
         <h2 className='h2 article-title'>{t('about-title')}</h2>
       </header>

@@ -13,7 +13,7 @@ const Curriculum = () => {
   const Courses = translateCourses(CoursesData, i18n.language);
 
   return (
-    <article className={`resume ${activePage === 'curriculum' ? 'active' : ''}`}>
+    <article className={`resume${activePage === 'curriculum' ? ' active' : ''}`}>
       <header>
         <h2 className='h2 article-title'>{t('curriculum-title')}</h2>
       </header>

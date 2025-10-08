@@ -106,7 +106,7 @@ const Sidebar = ({ isAvailable = 'busy' }) => {
   );
 };
 Sidebar.propTypes = {
-  isAvailable: PropTypes.bool,
+  isAvailable: PropTypes.string,
 };
 
 export default Sidebar;

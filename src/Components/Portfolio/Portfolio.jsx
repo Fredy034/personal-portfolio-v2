@@ -59,7 +59,7 @@ const Portfolio = () => {
   const filteredProjects = filterFunc(selectedValue);
 
   return (
-    <article className={`portfolio ${activePage === 'portfolio' ? 'active' : ''}`}>
+    <article className={`portfolio${activePage === 'portfolio' ? ' active' : ''}`}>
       <header>
         <h2 className='h2 article-title'>{t('portfolio-title')}</h2>
       </header>
