@@ -11,8 +11,8 @@ const EducationData = [
       es: '02/2021 - 08/2025',
     },
     description: {
-      en: 'I am currently working on obtaining my undergraduate degree, which will help me improve the skills I already obtained while doing my technical degree and further develop my experience.',
-      es: 'Actualmente estoy trabajando en obtener mi título de pregrado, lo que me ayudará a mejorar las habilidades que ya obtuve mientras hacía mi técnica y desarrollar aún más mi experiencia.',
+      en: 'I acquired a solid education in computer engineering, covering areas such as software development, databases, networks, and cybersecurity. I participated in practical projects that allowed me to apply my knowledge to real-world situations, developing technical and teamwork skills. Additionally, I stayed updated with the latest technological trends and industry best practices.',
+      es: 'Adquirí una sólida formación en ingeniería informática, abarcando áreas como desarrollo de software, bases de datos, redes y seguridad informática. Participé en proyectos prácticos que me permitieron aplicar mis conocimientos en situaciones del mundo real, desarrollando habilidades técnicas y de trabajo en equipo. Además, me mantuve actualizado con las últimas tendencias tecnológicas y mejores prácticas de la industria.',
     },
     professionalCard: 'https://tramites.copnia.gov.co/Copnia_Microsite/CertificateOfGoodStanding/WaterMarkmethod?CertificateNumber=011246-0790641%20ANT',
   },
@@ -28,8 +28,8 @@ const EducationData = [
       es: '08/2020 - 05/2024',
     },
     description: {
-      en: "I dedicated my time on enhancing my English communication skills, which I belive it is a crucial language in today's world.",
-      es: 'Dediqué mi tiempo a mejorar mis habilidades de comunicación en inglés, el cuál considero un idioma crucial en el mundo actual.',
+      en: 'I completed an English course at LCN Idiomas, achieving a C1 level according to the Common European Framework of Reference for Languages (CEFR). This level demonstrates my ability to understand and communicate effectively in English, both in written and spoken forms, in various contexts including academic and professional settings.',
+      es: 'Completé un curso de inglés en LCN Idiomas, alcanzando un nivel C1 según el Marco Común Europeo de Referencia para las Lenguas (MCER). Este nivel demuestra mi capacidad para comprender y comunicarme eficazmente en inglés, tanto en formas escritas como habladas, en diversos contextos, incluyendo entornos académicos y profesionales.',
     },
   },
   {
@@ -44,8 +44,8 @@ const EducationData = [
       es: '02/2019 - 11/2020',
     },
     description: {
-      en: 'I successfully obtained my title as a Software Development Technician while still in high school.',
-      es: 'Obtuve con éxito mi titulo como Técnico en Desarrollo de Software mientras aún estaba en bachillerato.',
+      en: 'I completed the Software Development Technician program at SENA, where I acquired fundamental knowledge in programming, databases, web development, and agile methodologies. During the course, I participated in practical projects that allowed me to apply my technical skills and work in teams, preparing me to face challenges in the field of software development.',
+      es: 'Finalicé el programa de Técnico en Desarrollo de Software en el SENA, donde adquirí conocimientos fundamentales en programación, bases de datos, desarrollo web y metodologías ágiles. Durante el curso, participé en proyectos prácticos que me permitieron aplicar mis habilidades técnicas y trabajar en equipo, preparándome para enfrentar desafíos en el campo del desarrollo de software.',
     },
   },
 ];
