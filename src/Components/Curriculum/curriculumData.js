@@ -101,6 +101,31 @@ const ExperienceData = [
       es: ['Python', 'Node.js', 'React.js', '.NET Core', 'JavaScript', 'HTML', 'CSS', 'Swagger', 'APIs', 'Inteligencia Artificial'],
     },
   },
+  {
+    id: 3,
+    title: {
+      en: 'Systems Analyst',
+      es: 'Analista de Sistemas',
+    },
+    company: 'Postobón S.A.',
+    date: {
+      en: '10/2025 - Present',
+      es: '10/2025 - Presente',
+    },
+    place: 'Medellín, Antioquia, Colombia',
+    modality: {
+      en: 'On-site',
+      es: 'Presencial',
+    },
+    description: {
+      en: 'Contributing to the development and maintenance of internal applications using Angular, .NET Core, and Microsoft SQL Server. Collaborating with cross-functional teams to gather requirements, design solutions, and implement new features. Participating in code reviews and ensuring adherence to best practices and coding standards. Assisting in troubleshooting and resolving technical issues to ensure optimal performance and user experience.',
+      es: 'Contribuyendo al desarrollo y mantenimiento de aplicaciones internas utilizando Angular, .NET Core y Microsoft SQL Server. Colaborando con equipos multifuncionales para recopilar requisitos, diseñar soluciones e implementar nuevas funcionalidades. Participando en revisiones de código y asegurando la adherencia a las mejores prácticas y estándares de codificación. Asistiendo en la resolución de problemas técnicos para garantizar un rendimiento óptimo y una excelente experiencia de usuario.',
+    },
+    skills: {
+      en: ['Angular', '.NET Core', 'Microsoft SQL Server', 'Team Collaboration', 'Code Reviews', 'Troubleshooting '],
+      es: ['Angular', '.NET Core', 'Microsoft SQL Server', 'Colaboración en Equipo', 'Revisiones de Código', 'Resolución de Problemas'],
+    },
+  }
 ];
 
 const CoursesData = [
