@@ -1,6 +1,6 @@
+import { useTranslation } from 'react-i18next';
 import { usePageContext } from '../PageContext';
 import './Navbar.css';
-import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
   const { t } = useTranslation();

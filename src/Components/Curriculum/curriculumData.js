@@ -14,7 +14,8 @@ const EducationData = [
       en: 'I acquired a solid education in computer engineering, covering areas such as software development, databases, networks, and cybersecurity. I participated in practical projects that allowed me to apply my knowledge to real-world situations, developing technical and teamwork skills. Additionally, I stayed updated with the latest technological trends and industry best practices.',
       es: 'Adquirí una sólida formación en ingeniería informática, abarcando áreas como desarrollo de software, bases de datos, redes y seguridad informática. Participé en proyectos prácticos que me permitieron aplicar mis conocimientos en situaciones del mundo real, desarrollando habilidades técnicas y de trabajo en equipo. Además, me mantuve actualizado con las últimas tendencias tecnológicas y mejores prácticas de la industria.',
     },
-    professionalCard: 'https://tramites.copnia.gov.co/Copnia_Microsite/CertificateOfGoodStanding/WaterMarkmethod?CertificateNumber=011246-0790641%20ANT',
+    professionalCard:
+      'https://tramites.copnia.gov.co/Copnia_Microsite/CertificateOfGoodStanding/WaterMarkmethod?CertificateNumber=011246-0790641%20ANT',
   },
   {
     id: 2,
@@ -97,8 +98,30 @@ const ExperienceData = [
       es: 'Responsabilidades y logros:\nDesarrollo de una API con Python para el procesamiento de text embeddings.\nDiseño y desarrollo de un prototipo de aplicación de control de escritorio remoto utilizando Node.js y React.js.\nCreación de un prototipo de ChatBot con inteligencia artificial, capaz de manejar contexto mediante un gestor de archivos y responder preguntas basadas en dicho contexto o en la web, empleando .NET Core, JavaScript, HTML, CSS y Swagger.',
     },
     skills: {
-      en: ['Python', 'Node.js', 'React.js', '.NET Core', 'JavaScript', 'HTML', 'CSS', 'Swagger', 'APIs', 'Artificial Intelligence'],
-      es: ['Python', 'Node.js', 'React.js', '.NET Core', 'JavaScript', 'HTML', 'CSS', 'Swagger', 'APIs', 'Inteligencia Artificial'],
+      en: [
+        'Python',
+        'Node.js',
+        'React.js',
+        '.NET Core',
+        'JavaScript',
+        'HTML',
+        'CSS',
+        'Swagger',
+        'APIs',
+        'Artificial Intelligence',
+      ],
+      es: [
+        'Python',
+        'Node.js',
+        'React.js',
+        '.NET Core',
+        'JavaScript',
+        'HTML',
+        'CSS',
+        'Swagger',
+        'APIs',
+        'Inteligencia Artificial',
+      ],
     },
   },
   {
@@ -123,14 +146,46 @@ const ExperienceData = [
     },
     skills: {
       en: ['Angular', '.NET Core', 'Microsoft SQL Server', 'Team Collaboration', 'Code Reviews', 'Troubleshooting '],
-      es: ['Angular', '.NET Core', 'Microsoft SQL Server', 'Colaboración en Equipo', 'Revisiones de Código', 'Resolución de Problemas'],
+      es: [
+        'Angular',
+        '.NET Core',
+        'Microsoft SQL Server',
+        'Colaboración en Equipo',
+        'Revisiones de Código',
+        'Resolución de Problemas',
+      ],
     },
-  }
+  },
 ];
 
 const CoursesData = [
   {
-    id: 1,
+    title: {
+      es: 'Curso de GitHub Copilot',
+      en: 'GitHub Copilot Course',
+    },
+    provider: 'Platzi',
+    image: '/assets/courses/platzi-full.svg',
+    date: {
+      es: 'Ene. 2026',
+      en: 'Jan. 2026',
+    },
+    url: 'https://platzi.com/p/fhquintero/curso/11818-github-copilot/diploma/detalle/',
+  },
+  {
+    title: {
+      es: 'Curso Gratis para Crear Agentes de AI con Copilot Studio',
+      en: 'Free Course to Create AI Agents with Copilot Studio',
+    },
+    provider: 'Platzi',
+    image: '/assets/courses/platzi-full.svg',
+    date: {
+      es: 'Dic. 2025',
+      en: 'Dec. 2025',
+    },
+    url: 'https://platzi.com/p/Fredy034/curso/12261-copilot-studio/diploma/detalle/?utm_source',
+  },
+  {
     title: {
       es: 'Desarrollando Aplicaciones en Angular 19 y ASP.NET Core 9',
       en: 'Developing Applications in Angular 19 and ASP.NET Core 9',
@@ -144,7 +199,6 @@ const CoursesData = [
     url: 'https://www.udemy.com/certificate/UC-1b5ff103-997c-454d-b868-0e14d8c4a664/',
   },
   {
-    id: 2,
     title: {
       es: 'Curso Práctico de SQL',
       en: 'Practical SQL Course',
@@ -158,7 +212,6 @@ const CoursesData = [
     url: 'https://platzi.com/p/Fredy034/curso/2059-course/diploma/detalle/',
   },
   {
-    id: 3,
     title: {
       es: 'Curso de Responsive Design: Maquetación Mobile First',
       en: 'Responsive Design Course: Mobile First Layout',
@@ -172,7 +225,6 @@ const CoursesData = [
     url: 'https://platzi.com/p/Fredy034/curso/2030-course/diploma/detalle/',
   },
   {
-    id: 4,
     title: {
       es: 'Angular 14 - La Guia Completa + 15 Proyectos',
       en: 'Angular 14 - The Complete Guide + 15 Projects',
@@ -186,7 +238,6 @@ const CoursesData = [
     url: 'https://www.udemy.com/certificate/UC-ed649eae-3c30-4337-b0e6-2dd368b3ba80/',
   },
   {
-    id: 5,
     title: {
       es: 'Introduction to Cybersecurity',
       en: 'Introduction to Cybersecurity',
@@ -200,7 +251,6 @@ const CoursesData = [
     url: 'https://www.credly.com/badges/d75bd61b-07e4-4ca8-8085-78e613fdb589/linked_in_profile',
   },
   {
-    id: 6,
     title: {
       es: 'Curso Definitivo de HTML y CSS',
       en: 'HTML and CSS Master Course',
@@ -214,7 +264,6 @@ const CoursesData = [
     url: 'https://platzi.com/p/Fredy034/curso/2008-html-css/diploma/detalle/',
   },
   {
-    id: 7,
     title: {
       es: 'Curso Profesional de Git y GitHub',
       en: 'Professional Git and GitHub Course',
@@ -228,7 +277,6 @@ const CoursesData = [
     url: 'https://platzi.com/p/Fredy034/curso/1557-git-github/diploma/detalle/',
   },
   {
-    id: 8,
     title: {
       es: 'CCNA: Introducción a Redes',
       en: 'CCNA: Introduction to Networks',
@@ -243,4 +291,4 @@ const CoursesData = [
   },
 ];
 
-export { EducationData, ExperienceData, CoursesData };
+export { CoursesData, EducationData, ExperienceData };

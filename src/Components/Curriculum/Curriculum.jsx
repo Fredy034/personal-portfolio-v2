@@ -44,7 +44,9 @@ const Curriculum = () => {
                   </div>
                   {experience.place && (
                     <div className='timeline-place'>
-                      <span>{experience.place} - {experience.modality}</span>
+                      <span>
+                        {experience.place} - {experience.modality}
+                      </span>
                     </div>
                   )}
                   <div className='timeline-text'>
@@ -119,13 +121,13 @@ const Curriculum = () => {
         </div>
 
         <ol className='timeline-list'>
-          {Courses.map((course) => (
+          {Courses.map((course, index) => (
             <a
               href={course.url}
               target='_blank'
               rel='noopener noreferrer'
               onClick={(e) => e.stopPropagation()}
-              key={course.id}
+              key={index}
               className='timeline-item'
             >
               <div className='timeline-title timeline-title-course'>

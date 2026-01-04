@@ -25,9 +25,9 @@ function App() {
           <Curriculum />
           <Skills />
           <Porfolio />
-          {/* <Resources />
-          <Blog />
-          <Contact /> */}
+          {/* <Resources /> */}
+          {/* <Blog /> */}
+          {/* <Contact /> */}
         </div>
       </PageProvider>
     </main>
