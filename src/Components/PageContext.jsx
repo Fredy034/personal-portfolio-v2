@@ -4,19 +4,27 @@ import { createContext, useContext, useEffect, useState } from 'react';
 const PageContext = createContext();
 
 const getPageFromUrl = () => {
-  const params = new URLSearchParams(window.location.search);
-  return params.get('tab') || 'about';
+  const path = window.location.pathname;
+  const segments = path.split('/').filter(Boolean);
+
+  if (segments.length > 1 && segments[0] === 'portfolio') {
+    return segments[1];
+  }
+
+  if (segments.length === 1 && segments[0] === 'portfolio') {
+    return 'about';
+  }
+
+  return 'about';
 };
 
 export const PageProvider = ({ children }) => {
   const [activePage, setActivePage] = useState(getPageFromUrl());
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (activePage !== params.get('tab')) {
-      params.set('tab', activePage);
-      const newUrl = `${window.location.pathname}?${params.toString()}`;
-      window.history.replaceState({}, '', newUrl);
+    const newPath = `/portfolio/${activePage}`;
+    if (window.location.pathname !== newPath) {
+      window.history.replaceState({}, '', newPath);
     }
   }, [activePage]);
 
