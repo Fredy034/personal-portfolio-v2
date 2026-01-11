@@ -19,7 +19,7 @@ const Sidebar = ({ isAvailable = 'busy' }) => {
 
   useEffect(() => {
     const img = new window.Image();
-    img.src = './images/avatar/my-avatar-blink.webp';
+    img.src = '/images/avatar/my-avatar-blink.webp';
   }, []);
 
   const iconContacts = isActive ? 'fa-solid fa-chevron-up' : 'fa-solid fa-chevron-down';
@@ -31,14 +31,14 @@ const Sidebar = ({ isAvailable = 'busy' }) => {
         <figure className='avatar-box'>
           <img
             className='hover-hidden'
-            src='./images/avatar/my-avatar.webp'
+            src='/images/avatar/my-avatar.webp'
             alt="Fredy Quintero's Avatar"
             width='100%'
             height='auto'
           />
           <img
             className='hover-flex'
-            src='./images/avatar/my-avatar-blink.webp'
+            src='/images/avatar/my-avatar-blink.webp'
             alt="Fredy Quintero's Avatar Blinking"
             width='100%'
             height='auto'

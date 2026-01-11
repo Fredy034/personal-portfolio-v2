@@ -17,7 +17,7 @@ const ServicesData = [
   // },
   {
     id: 2,
-    image: 'assets/icon-dev.svg',
+    image: '/assets/icon-dev.svg',
     alt: {
       en: 'Web Development Icon',
       es: 'Icono de Desarrollo Web',
@@ -33,7 +33,7 @@ const ServicesData = [
   },
   {
     id: 3,
-    image: 'assets/icon-app.svg',
+    image: '/assets/icon-app.svg',
     alt: {
       en: 'Mobile Apps Icon',
       es: 'Icono de Aplicaciones Móviles',
@@ -69,7 +69,7 @@ const TestimonialsData = [
   {
     id: 1,
     name: 'Daniel Lewis',
-    avatar: 'images/avatar-1.png',
+    avatar: '/images/avatar-1.png',
     text: {
       en: 'Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.',
       es: 'Richard fue contratada para crear una identidad corporativa. Estábamos muy contentos con el trabajo realizado. Ella tiene mucha experiencia y se preocupa mucho por las necesidades del cliente. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -78,7 +78,7 @@ const TestimonialsData = [
   {
     id: 2,
     name: 'Jessica Brown',
-    avatar: 'images/avatar-2.png',
+    avatar: '/images/avatar-2.png',
     text: {
       en: 'Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.',
       es: 'Richard fue contratada para crear una identidad corporativa. Estábamos muy contentos con el trabajo realizado. Ella tiene mucha experiencia y se preocupa mucho por las necesidades del cliente. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -87,7 +87,7 @@ const TestimonialsData = [
   {
     id: 3,
     name: 'Emily Evans',
-    avatar: 'images/avatar-3.png',
+    avatar: '/images/avatar-3.png',
     text: {
       en: 'Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.',
       es: 'Richard fue contratada para crear una identidad corporativa. Estábamos muy contentos con el trabajo realizado. Ella tiene mucha experiencia y se preocupa mucho por las necesidades del cliente. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -96,7 +96,7 @@ const TestimonialsData = [
   {
     id: 4,
     name: 'Michael Baker',
-    avatar: 'images/avatar-4.png',
+    avatar: '/images/avatar-4.png',
     text: {
       en: 'Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.',
       es: 'Richard fue contratada para crear una identidad corporativa. Estábamos muy contentos con el trabajo realizado. Ella tiene mucha experiencia y se preocupa mucho por las necesidades del cliente. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -107,32 +107,32 @@ const TestimonialsData = [
 const ClientsData = [
   {
     id: 1,
-    image: 'images/logo-1-color.png',
+    image: '/images/logo-1-color.png',
     alt: 'Client Logo',
   },
   {
     id: 2,
-    image: 'images/logo-2-color.png',
+    image: '/images/logo-2-color.png',
     alt: 'Client Logo',
   },
   {
     id: 3,
-    image: 'images/logo-3-color.png',
+    image: '/images/logo-3-color.png',
     alt: 'Client Logo',
   },
   {
     id: 4,
-    image: 'images/logo-4-color.png',
+    image: '/images/logo-4-color.png',
     alt: 'Client Logo',
   },
   {
     id: 5,
-    image: 'images/logo-5-color.png',
+    image: '/images/logo-5-color.png',
     alt: 'Client Logo',
   },
   {
     id: 6,
-    image: 'images/logo-6-color.png',
+    image: '/images/logo-6-color.png',
     alt: 'Client Logo',
   },
 ];
