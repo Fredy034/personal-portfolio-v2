@@ -161,6 +161,19 @@ const ExperienceData = [
 const CoursesData = [
   {
     title: {
+      es: 'Curso de Prompt Engineering',
+      en: 'Prompt Engineering Course',
+    },
+    provider: 'Platzi',
+    image: '/assets/courses/platzi-full.svg',
+    date: {
+      es: 'Ene. 2026',
+      en: 'Jan. 2026',
+    },
+    url: 'https://platzi.com/p/fhquintero/curso/12323-prompt-engineering/diploma/detalle/',
+  },
+  {
+    title: {
       es: 'Curso de GitHub Copilot',
       en: 'GitHub Copilot Course',
     },
