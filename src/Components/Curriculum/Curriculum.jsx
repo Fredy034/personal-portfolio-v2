@@ -36,7 +36,19 @@ const Curriculum = () => {
                   <div className='timeline-title'>
                     <h4 className='h4 timeline-item-title'>{experience.title}</h4>
                     <span className='dot'></span>
-                    <span className='timeline-item-subtitle'>{experience.company}</span>
+                    {experience.link ? (
+                      <a
+                        href={experience.link}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        onClick={(e) => e.stopPropagation()}
+                        className='timeline-item-link'
+                      >
+                        <span className='timeline-item-subtitle'>{experience.company}</span>
+                      </a>
+                    ) : (
+                      <span className='timeline-item-subtitle'>{experience.company}</span>
+                    )}
                   </div>
                   <div className='timeline-year'>
                     <i className='fa-regular fa-calendar-days'></i>

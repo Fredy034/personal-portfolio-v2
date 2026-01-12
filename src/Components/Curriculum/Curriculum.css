@@ -82,6 +82,20 @@
   font-size: var(--fs-6);
   line-height: 1.3;
 }
+.timeline-item-link {
+  text-decoration: none;
+  transition: all ease-in-out 0.3s;
+}
+.timeline-item-link .timeline-item-subtitle {
+  color: var(--light-gray-70);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-300);
+}
+.timeline-item-link:hover .timeline-item-subtitle {
+  color: var(--vegas-gold);
+  font-weight: var(--fw-400);
+  text-decoration: underline;
+}
 .course-row-2 .timeline-item-subtitle {
   color: var(--light-gray-70);
   font-size: var(--fs-8);

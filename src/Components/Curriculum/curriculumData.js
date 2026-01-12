@@ -59,6 +59,7 @@ const ExperienceData = [
       es: 'Practicante TI Arquitectura',
     },
     company: 'Postobón S.A.',
+    link: 'https://www.postobon.com/',
     date: {
       en: '02/2025 - 08/2025',
       es: '02/2025 - 08/2025',
@@ -131,6 +132,7 @@ const ExperienceData = [
       es: 'Analista de Sistemas',
     },
     company: 'Postobón S.A.',
+    link: 'https://www.postobon.com/',
     date: {
       en: '10/2025 - Present',
       es: '10/2025 - Presente',
