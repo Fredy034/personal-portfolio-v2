@@ -163,6 +163,19 @@ const ExperienceData = [
 const CoursesData = [
   {
     title: {
+      es: 'Curso de Inglés para Programadores',
+      en: 'English for Programmers Course',
+    },
+    provider: 'Platzi',
+    image: '/assets/courses/platzi-full.svg',
+    date: {
+      es: 'Ene. 2026',
+      en: 'Jan. 2026',
+    },
+    url: 'https://platzi.com/p/fhquintero/curso/3092-ingles-developers/diploma/detalle/',
+  },
+  {
+    title: {
       es: 'Curso de Prompt Engineering',
       en: 'Prompt Engineering Course',
     },
