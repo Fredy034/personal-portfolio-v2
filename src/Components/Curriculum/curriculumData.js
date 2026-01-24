@@ -163,6 +163,19 @@ const ExperienceData = [
 const CoursesData = [
   {
     title: {
+      es: 'Curso de Supabase',
+      en: 'Supabase Course',
+    },
+    provider: 'Platzi',
+    image: '/assets/courses/platzi-full.svg',
+    date: {
+      es: 'Ene. 2026',
+      en: 'Jan. 2026',
+    },
+    url: 'https://platzi.com/p/fhquintero/curso/12544-supabase/diploma/detalle/',
+  },
+  {
+    title: {
       es: 'Curso de Inglés para Programadores',
       en: 'English for Programmers Course',
     },
