@@ -163,6 +163,19 @@ const ExperienceData = [
 const CoursesData = [
   {
     title: {
+      es: 'Curso de Supabase Avanzado',
+      en: 'Advanced Supabase Course',
+    },
+    provider: 'Platzi',
+    image: '/assets/courses/platzi-full.svg',
+    date: {
+      es: 'Ene. 2026',
+      en: 'Jan. 2026',
+    },
+    url: 'https://platzi.com/p/fhquintero/curso/12559-supabase-avanzado/diploma/detalle/',
+  },
+  {
+    title: {
       es: 'Curso de Supabase',
       en: 'Supabase Course',
     },
