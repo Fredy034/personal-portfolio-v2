@@ -163,6 +163,19 @@ const ExperienceData = [
 const CoursesData = [
   {
     title: {
+      es: 'Curso de OWASP Top 10: Riesgos en Aplicaciones',
+      en: 'OWASP Top 10 Course: Application Risks',
+    },
+    provider: 'Platzi',
+    image: '/assets/courses/platzi-full.svg',
+    date: {
+      es: 'Feb. 2026',
+      en: 'Feb. 2026',
+    },
+    url: 'https://platzi.com/p/fhquintero/curso/9342-owasp-top-10/diploma/detalle/',
+  },
+  {
+    title: {
       es: 'Curso de Supabase Avanzado',
       en: 'Advanced Supabase Course',
     },
