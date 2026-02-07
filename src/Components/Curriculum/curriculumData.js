@@ -163,6 +163,19 @@ const ExperienceData = [
 const CoursesData = [
   {
     title: {
+      es: 'Curso de Creación de Agentes Avanzados con Microsoft Copilot Studio',
+      en: 'Advanced Agents Creation Course with Microsoft Copilot Studio',
+    },
+    provider: 'Platzi',
+    image: '/assets/courses/platzi-full.svg',
+    date: {
+      es: 'Feb. 2026',
+      en: 'Feb. 2026',
+    },
+    url: 'https://platzi.com/p/fhquintero/curso/12498-agentes-avanzados-microsoft-copilot/diploma/detalle/',
+  },
+  {
+    title: {
       es: 'Curso de OWASP Top 10: Riesgos en Aplicaciones',
       en: 'OWASP Top 10 Course: Application Risks',
     },
